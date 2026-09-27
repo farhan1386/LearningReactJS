@@ -6,52 +6,80 @@ This master documentation serves as your comprehensive reference guide for found
 
 ##  Phase_1_JavaScript_Prerequisites / Week-1: Block Scope, Template Literals, Arrow Functions, Destructuring, Spread/Rest Operators, Array Methods (map, filter, reduce), Logic Operators (Ternary, &&, ??), Promises, Async/Await & Data Fetching, Object Methods, Optional Chaining, ES6 Modules, and Error Handling Architecture
 
+### Day 1: var, let, const & Template Literals
 
-### Day 1: Block Scope (let and const) & Template Literals
+**Var, let & const**
+Modern JavaScript introduces `let` and `const` to lock variables into the specific block `{}` where they are declared. This replaces the old `var` keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs.     
 
-*   **Variables & String Formatting**
+* **1. var Keyword:** The `var` keyword is used to declare a variable. It has a function-scoped or globally-scoped behavior.
+    ```javascript
+    // File 01_BlockScopeVariables.js
+    // var Syntax: Overwrites global loop counters unexpectedly
+    for (var i = 0; i < 3; i++) {
+        // Loops 3 times
+    }
+    console.log(i); // Outputs: 3 (i leaked outside the loop!)
+    ```
 
-    *   **1. Block Scope (let and const)**
-        Modern JavaScript introduces `let` and `const` to lock variables into the specific block `{}` where they are declared. This replaces the old `var` keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs.
+* **2. let Keyword:** The `let` keyword was introduced in ES6. It has block scope and cannot be re-declared in the same scope.
+    ```javascript
+    // File 01_BlockScopeVariables.js
+    // let Syntax: Perfect for values that update, like a user's game score
+    let userScore = 100;
+    userScore += 50; // Value updates to 150
+    
+    if (userScore > 100) {
+        let bonusMessage = "High Score!"; 
+    }
+    // console.log(bonusMessage); // Throws ReferenceError (Kept safe inside the if-block)
+    ```
 
-        *   **const:** Keyword used to declare variables that cannot be reassigned (immutable references).
-        *   **let:** Keyword used to declare block-scoped variables that are intended to be reassigned later.
-        *   **{ }:** The absolute execution block boundary that locks the variables inside.
+* **3. const Keyword:** The `const` keyword declares variables that cannot be reassigned. It is block-scoped as well.
+    ```javascript
+    // File 01_BlockScopeVariables.js
+    // const Syntax: Ideal for fixed configuration values settings
+    const API_URL = "https://example.com";
+    const MAX_LOGIN_ATTEMPTS = 5;
+    
+    // MAX_LOGIN_ATTEMPTS = 6; // Throws TypeError: Assignment to constant variable.
+    ```
 
-        *   **Syntax Structure:**
-            ```javascript
-            // Strict Constant variable declaration
-            const applicationName = "React Sandbox";
-            // applicationName = "New App"; // Throws TypeError: Assignment to constant variable.
+**Template Literals**
+Template Literals (introduced in ES6) are string literals that allow embedded expressions. They make string creation vastly cleaner compared to traditional string concatenation using the `+` operator. Instead of single or double quotes, they are enclosed by the backtick (`` ` ``) character.
 
-            // Block-scoped reassignable variable
-            if (true) {
-                var standardVariable = "I leak outside this block!"; 
-                let scopedVariable = "I am safely locked inside!";
-            }
-            console.log(standardVariable); // Works (Dangerous global leak)
-            // console.log(scopedVariable);  // Throws ReferenceError: scopedVariable is not defined
-            ```
+* **1. String Interpolation:** Allows you to inject variables directly into the string using the `${expression}` placeholder syntax.
+    ```javascript
+    // 02_TemplateLiteralStrings.js
+    const username = "Alex";
+    // Old way: "Hello, " + username + "!"
+    const greeting = `Hello, ${username}!`; 
+    console.log(greeting); // Outputs: Hello, Alex!
+    ```
 
-    *   **2. Template Literals**
-        Uses backticks (\``\`) instead of standard quotation marks to compose strings. It allows you to dynamically inject variables, execution calculations, or logic expressions directly into the text layout using the `${expression}` placeholder.
+* **2. Multi-line Strings:** Keeps multi-line formatting exactly as written in the code editor, eliminating the need for `\n` escape characters.
+    ```javascript
+    // 02_TemplateLiteralStrings.js
+    // Old way required adding "\n" at the end of each line
+    const htmlSnippet = `
+      <div>
+        <h1>Welcome</h1>
+      </div>
+    `;
+    ```
 
-        *   **\` \`:** Backtick characters wrapping the entire literal string configuration.
-        *   **\${ }:** Evaluation token boundary used to parse and inject live JavaScript operations inside the string.
-        *   **expression:** Variables, properties, method returns, or math calculations running inside the token window.
+* **3. Expression Evaluation:** You can run basic math operations, logic, or call functions directly inside the `${}` wrapper.
+    ```javascript
+    // 02_TemplateLiteralStrings.js
+    const itemPrice = 100;
+    const taxRate = 0.18;
 
-        *   **Syntax Structure:**
-            ```javascript
-            const moduleName = "Components";
-            const dayNumber = 2;
+    const receipt = `Total: $${itemPrice * (1 + taxRate)}`;
+    console.log(receipt); // Outputs: Total: \$118
+    ```
 
-            // Evaluating logic and variable injection inline
-            const logMessage = `Finished topic: ${moduleName} on Day ${dayNumber}. Next is Day ${dayNumber + 1}`;
-            
-            // Usage for dynamic UI styling class assignments
-            const activeStatus = true;
-            const elementClass = `btn ${activeStatus ? "btn-active" : "btn-disabled"}`;
-            ```
+**Key Rules for Template Literals:**
+   * **The Character:** Always use backticks (`), not single quotes (') or double quotes (").
+   * **The Placeholder:** Any JavaScript code inside ${} will be executed and converted into text inside the string.
 
 ### Day 2: Arrow Functions, Object & Array Destructuring, Spread & Rest Operators
 

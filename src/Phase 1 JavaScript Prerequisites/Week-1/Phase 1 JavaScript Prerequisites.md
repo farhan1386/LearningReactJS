@@ -4,7 +4,7 @@ This master documentation serves as your comprehensive reference guide for found
 
 ---
 
-##  Phase_1_JavaScript_Prerequisites / Week-1: Block Scope, Template Literals, Arrow Functions, Destructuring, Spread/Rest Operators, Array Methods (map, filter, reduce), Logic Operators (Ternary, &&, ??), Promises, Async/Await & Data Fetching, Object Methods, Optional Chaining, ES6 Modules, and Error Handling Architecture
+##  Phase_1_JavaScript_Prerequisites / Week-1
 
 ### Day 1: var, let, const & Template Literals
 
@@ -12,137 +12,199 @@ This master documentation serves as your comprehensive reference guide for found
 Modern JavaScript introduces `let` and `const` to lock variables into the specific block `{}` where they are declared. This replaces the old `var` keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs.     
 
 * **1. var Keyword:** The `var` keyword is used to declare a variable. It has a function-scoped or globally-scoped behavior.
-    ```javascript
-    // File 01_BlockScopeVariables.js
-    // var Syntax: Overwrites global loop counters unexpectedly
-    for (var i = 0; i < 3; i++) {
-        // Loops 3 times
-    }
-    console.log(i); // Outputs: 3 (i leaked outside the loop!)
-    ```
+
+    *   **Syntax Structure:**
+        ```javascript
+        // File 01_BlockScopeVariables.js
+        // var Syntax: Overwrites global loop counters unexpectedly
+        for (var i = 0; i < 3; i++) {
+            // Loops 3 times
+        }
+        console.log(i); // Outputs: 3 (i leaked outside the loop!)
+        ```
 
 * **2. let Keyword:** The `let` keyword was introduced in ES6. It has block scope and cannot be re-declared in the same scope.
-    ```javascript
-    // File 01_BlockScopeVariables.js
-    // let Syntax: Perfect for values that update, like a user's game score
-    let userScore = 100;
-    userScore += 50; // Value updates to 150
-    
-    if (userScore > 100) {
-        let bonusMessage = "High Score!"; 
-    }
-    // console.log(bonusMessage); // Throws ReferenceError (Kept safe inside the if-block)
-    ```
+
+    *   **Syntax Structure:**
+        ```javascript
+        // File 01_BlockScopeVariables.js
+        // let Syntax: Perfect for values that update, like a user's game score
+        let userScore = 100;
+        userScore += 50; // Value updates to 150
+        
+        if (userScore > 100) {
+            let bonusMessage = "High Score!"; 
+        }
+        // console.log(bonusMessage); // Throws ReferenceError (Kept safe inside the if-block)
+        ```
 
 * **3. const Keyword:** The `const` keyword declares variables that cannot be reassigned. It is block-scoped as well.
-    ```javascript
-    // File 01_BlockScopeVariables.js
-    // const Syntax: Ideal for fixed configuration values settings
-    const API_URL = "https://example.com";
-    const MAX_LOGIN_ATTEMPTS = 5;
-    
-    // MAX_LOGIN_ATTEMPTS = 6; // Throws TypeError: Assignment to constant variable.
-    ```
+
+    *   **Syntax Structure:**
+        ```javascript
+        // File 01_BlockScopeVariables.js
+        // const Syntax: Ideal for fixed configuration values settings
+        const API_URL = "https://example.com";
+        const MAX_LOGIN_ATTEMPTS = 5;
+        
+        // MAX_LOGIN_ATTEMPTS = 6; // Throws TypeError: Assignment to constant variable.
+        ```
 
 **Template Literals**
 Template Literals (introduced in ES6) are string literals that allow embedded expressions. They make string creation vastly cleaner compared to traditional string concatenation using the `+` operator. Instead of single or double quotes, they are enclosed by the backtick (`` ` ``) character.
 
 * **1. String Interpolation:** Allows you to inject variables directly into the string using the `${expression}` placeholder syntax.
-    ```javascript
-    // 02_TemplateLiteralStrings.js
-    const username = "Alex";
-    // Old way: "Hello, " + username + "!"
-    const greeting = `Hello, ${username}!`; 
-    console.log(greeting); // Outputs: Hello, Alex!
-    ```
+
+    *   **Syntax Structure:**
+        ```javascript
+        // 02_TemplateLiteralStrings.js
+        const username = "Alex";
+        // Old way: "Hello, " + username + "!"
+        const greeting = `Hello, ${username}!`; 
+        console.log(greeting); // Outputs: Hello, Alex!
+        ```
 
 * **2. Multi-line Strings:** Keeps multi-line formatting exactly as written in the code editor, eliminating the need for `\n` escape characters.
-    ```javascript
-    // 02_TemplateLiteralStrings.js
-    // Old way required adding "\n" at the end of each line
-    const htmlSnippet = `
-      <div>
-        <h1>Welcome</h1>
-      </div>
-    `;
-    ```
+
+    *   **Syntax Structure:**
+        ```javascript
+        // 02_TemplateLiteralStrings.js
+        // Old way required adding "\n" at the end of each line
+        const htmlSnippet = `
+          <div>
+            <h1>Welcome</h1>
+          </div>
+        `;
+        ```
 
 * **3. Expression Evaluation:** You can run basic math operations, logic, or call functions directly inside the `${}` wrapper.
-    ```javascript
-    // 02_TemplateLiteralStrings.js
-    const itemPrice = 100;
-    const taxRate = 0.18;
 
-    const receipt = `Total: $${itemPrice * (1 + taxRate)}`;
-    console.log(receipt); // Outputs: Total: \$118
-    ```
+    *   **Syntax Structure:**
+        ```javascript
+        // 02_TemplateLiteralStrings.js
+        const itemPrice = 100;
+        const taxRate = 0.18;
+
+        const receipt = `Total: $${itemPrice * (1 + taxRate)}`;
+        console.log(receipt); // Outputs: Total: \$118
+        ```
 
 **Key Rules for Template Literals:**
    * **The Character:** Always use backticks (`), not single quotes (') or double quotes (").
    * **The Placeholder:** Any JavaScript code inside ${} will be executed and converted into text inside the string.
 
+
 ### Day 2: Arrow Functions, Object & Array Destructuring, Spread & Rest Operators
 
-*   **Syntax Enhancements**
+*   **1. Arrow Functions:**
+    Arrow functions provide a concise way to write functions using the `=>` syntax. Introduced in ES6, they are commonly used for callbacks and array methods.
 
-    *   **1. Arrow Functions**
-        Provides a shorter, highly readable syntax blueprint for declaring functional blocks. React leverages arrow functions extensively to construct lightweight functional components and quick functional event triggers.
+    *   **functionName:** Name assigned to the arrow function variable.
+    *   **parameters:** Inputs passed into the functional block inside parentheses.
+    *   **=>:** The structural arrow token notation used to define the function and bind parameters to execution logic.
+    *   **{ }:** Contains the function body scoping execution code lines (optional for implicit returns).
 
-        *   **functionName:** Name assigned to the arrow function variable.
-        *   **parameters:** Inputs passed into the functional block inside parentheses.
-        *   **=>:** The structural arrow token notation used to define the function and bind parameters to execution logic.
-        *   **{ }:** Contains the function body scoping execution code lines (optional for implicit returns).
+    *   **Syntax Structure:**
+        ```javascript
+        // 03_ArrowFunctionsSyntax.js
+        // Standard Explicit Return syntax
+        const addNumbers = (a, b) => {
+            return a + b;
+        };
 
-        *   **Syntax Structure:**
-            ```javascript
-            // Standard Explicit Return syntax
-            const addNumbers = (a, b) => {
-                return a + b;
-            };
+        // Concise Implicit Return syntax (Single line only: omit curly braces and 'return' keyword)
+        const multiplyNumbers = (a, b) => a * b;
 
-            // Concise Implicit Return syntax (Single line only: omit curly braces and 'return' keyword)
-            const multiplyNumbers = (a, b) => a * b;
+        // Single argument shortcut (Parentheses can be omitted entirely)
+        const squareNumber = x => x * x;
+        ```
 
-            // Single argument shortcut (Parentheses can be omitted entirely)
-            const squareNumber = x => x * x;
-            ```
+*  **2. Object Destructuring:**
+    Object destructuring extracts properties from an object based on their key names.
 
-    *   **2. Object & Array Destructuring**
-        Instantly unpacks properties out of an object or individual elements out of an ordered array, assigning them to isolated variables. This avoids repetitive property-dot referencing chains (`props.title`, `props.price`).
+    *   **Syntax Structure:**
+        ```javascript
+        // 04_DataStructureDestructuring.js
+        // Object Destructuring
+        // 1. Basic Syntax
+        const { prop1, prop2 } = object;
 
-        *   **{ prop1, prop2 }:** The extraction template mapping target object keys to clean variables.
-        *   **[ var1, var2 ]:** The extraction template mapping target array positions to clean variables.
-        *   **assignmentTarget:** The source data object or array container being unpacked.
+        // 2. Renaming Variables
+        const { originalKey: newVariableName } = object;
 
-        *   **Syntax Structure:**
-            ```javascript
-            // Object Destructuring configuration
-            const itemConfig = { title: "Wireless Mouse", pricing: 1200 };
-            const { title, pricing } = itemConfig; 
-            // Variables 'title' and 'pricing' are now directly accessible
+        // 3. Default Values
+        const { propName = defaultValue } = object;
 
-            // Array Destructuring configuration
-            const stateHook = ["InitialStateValue", function dispatch() {}];
-            const [currentData, setData] = stateHook;
-            ```
+        // 4. Renaming + Default Values Combined
+        const { originalKey: newName = defaultValue } = object;
 
-    *   **3. Spread & Rest Operators (`...`)**
-        The triple-dot syntax expands elements of an iterable array or properties of a key-value object. It is used to shallow-copy or merge data structures securely without mutating the underlying data source.
+        // 5. Deep/Nested Destructuring
+        const { nestedObjectKey: { targetProp } } = object;
 
-        *   **...targetContainer:** Unpacks elements or properties out of the referenced variable container.
-        *   **[ ...array ]:** Generates a newly allocated duplicate array instance context on the stack.
-        *   **{ ...object }:** Generates a newly allocated duplicate object instance context on the heap.
+        // 6. Rest Syntax (gathers remaining properties)
+        const { prop1, ...remainingProps } = object;
+        ```
 
-        *   **Syntax Structure:**
-            ```javascript
-            // Array duplication and append expansion
-            const primaryGroup =;
-            const extendedGroup = [...primaryGroup, 3, 4]; // Result: [1, 2, 3, 4]
+*  **3. Array Destructuring:**
+    Array Destructuring unpacks elements from an iterable (like an array or string) based on their ordered position (index).
 
-            // Immutable object mutation
-            const initialProfile = { name: "Raj", theme: "light" };
-            const updatedProfile = { ...initialProfile, theme: "dark" }; // Overrides theme safely
-            ```
+    *   **Syntax Structure:**
+        ```javascript
+        // 04_DataStructureDestructuring.js
+        // Array Destructuring
+        // 1. Basic Syntax
+        const [item1, item2] = array;
+
+        // 2. Skipping Elements (Leave blank spaces between commas)
+        const [first, , third] = array;
+
+        // 3. Default Values
+        const [item1 = defaultValue] = array;
+
+        // 4. Nested Array Destructuring
+        const [first, [nestedFirst, nestedSecond]] = array;
+
+        // 5. Rest Syntax (gathers remaining elements into a new array)
+        const [first, ...allTheRest] = array;
+        ```
+
+*  **4. Spread Operator:**
+    The spread operator (`...`) in JavaScript allows an iterable (like an array or string) or an object expression to be expanded in places where zero or more arguments or elements are expected.
+
+    *   **Syntax Structure:**
+        ```javascript
+        // 05_SpreadRestOperators.js
+        const user = { name: 'Alice', role: 'Admin' };
+
+        // 1. Shallow Copying an Object
+        const userCopy = { ...user }; 
+
+        // 2. Merging Objects (Rightmost properties overwrite previous ones)
+        const details = { age: 28, role: 'Editor' };
+        const mergedUser = { ...user, ...details }; 
+        // Result: { name: 'Alice', age: 28, role: 'Editor' }
+
+        // 3. Overriding/Updating Properties during a copy
+        const updatedUser = { ...user, role: 'SuperAdmin' };
+        // Result: { name: 'Alice', role: 'SuperAdmin' }
+        ```
+
+*  **5. Rest Operator:**
+    The rest operator uses the exact same syntax (`...`) as the spread operator, but it does the exact opposite: it gathers multiple separate items into a single array or object collection.
+
+    *   **Syntax Structure:**
+        ```javascript
+        // 05_SpreadRestOperators.js
+        // OBJECTS: Gathers remaining keys into a new object
+        const { targetKey, ...remainingKeysObj } = myObject;
+
+        // ARRAYS: Gathers remaining items into a new array
+        const [firstItem, ...remainingItemsArr] = myArray;
+
+        // FUNCTIONS: Gathers standalone arguments into a true array
+        function myFunction(...allArgumentsArr) {}
+        function myMixedFunction(firstArg, ...restOfArgumentsArr) {}
+        ```
 
 ### Day 3: Array Operations & Data Transformations (map(), filter() & reduce())
 
@@ -342,7 +404,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
             const nonExistentMeta = networkPayload.admin?.settings?.role; // Safely yields undefined (No Crash)
             ```
 
-### Day 7: ES6 Modules (Import/Export) & Error Handling Architecture
+### Day 7: ES6 Modules (Import/Export) & Error Handling
 
 *   **Modularization & Fault Management**
 

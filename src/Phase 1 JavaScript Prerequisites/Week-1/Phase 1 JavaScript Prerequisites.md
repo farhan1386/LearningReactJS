@@ -15,7 +15,7 @@ Modern JavaScript introduces `let` and `const` to lock variables into the specif
 
     *   **Syntax Structure:**
         ```javascript
-        // File 01_BlockScopeVariables.js
+        // File: 01_Var_Let_Const.js
         // var Syntax: Overwrites global loop counters unexpectedly
         for (var i = 0; i < 3; i++) {
             // Loops 3 times
@@ -27,7 +27,7 @@ Modern JavaScript introduces `let` and `const` to lock variables into the specif
 
     *   **Syntax Structure:**
         ```javascript
-        // File 01_BlockScopeVariables.js
+        // File: 01_Var_Let_Const.js
         // let Syntax: Perfect for values that update, like a user's game score
         let userScore = 100;
         userScore += 50; // Value updates to 150
@@ -42,7 +42,7 @@ Modern JavaScript introduces `let` and `const` to lock variables into the specif
 
     *   **Syntax Structure:**
         ```javascript
-        // File 01_BlockScopeVariables.js
+        // File: 01_Var_Let_Const.js
         // const Syntax: Ideal for fixed configuration values settings
         const API_URL = "https://example.com";
         const MAX_LOGIN_ATTEMPTS = 5;
@@ -57,7 +57,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // 02_TemplateLiteralStrings.js
+        // File: 02_Template_Literals.js
         const username = "Alex";
         // Old way: "Hello, " + username + "!"
         const greeting = `Hello, ${username}!`; 
@@ -68,7 +68,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // 02_TemplateLiteralStrings.js
+        // File: 02_Template_Literals.js
         // Old way required adding "\n" at the end of each line
         const htmlSnippet = `
           <div>
@@ -81,7 +81,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // 02_TemplateLiteralStrings.js
+        // File: 02_Template_Literals.js
         const itemPrice = 100;
         const taxRate = 0.18;
 
@@ -106,7 +106,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // 03_ArrowFunctionsSyntax.js
+        // File: 03_Arrow_Functions.js
         // Standard Explicit Return syntax
         const addNumbers = (a, b) => {
             return a + b;
@@ -124,8 +124,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // 04_DataStructureDestructuring.js
-        // Object Destructuring
+        // File: 04_Object_Array_Destructuring.js
         // 1. Basic Syntax
         const { prop1, prop2 } = object;
 
@@ -150,8 +149,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // 04_DataStructureDestructuring.js
-        // Array Destructuring
+        // File: 04_Object_Array_Destructuring.js
         // 1. Basic Syntax
         const [item1, item2] = array;
 
@@ -173,7 +171,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // 05_SpreadRestOperators.js
+        // File: 05_Spread_Rest_Operators.js
         const user = { name: 'Alice', role: 'Admin' };
 
         // 1. Shallow Copying an Object
@@ -194,7 +192,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // 05_SpreadRestOperators.js
+        // File: 05_Spread_Rest_Operators.js
         // OBJECTS: Gathers remaining keys into a new object
         const { targetKey, ...remainingKeysObj } = myObject;
 
@@ -207,8 +205,6 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
         ```
 
 ### Day 3: Array Operations & Data Transformations (map(), filter() & reduce())
-
-*   **Immutability-Safe Array Modifiers**
 
     *   **1. `.map()` Method**
         Iterates progressively over every single element inside a source array, processes each through a transformation callback, and outputs a completely new array of matching length. React relies on this to translate raw data arrays into dynamic visual UI layouts.
@@ -266,25 +262,25 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
 ### Day 4: Logic Control & UI Switching
 
-*   **Inline Conditional Logic**
-
     *   **1. Ternary Operator (`condition ? true : false`)**
-        An inline structural substitute for bulky `if-else` branching control paths. It evaluates a conditional flag and immediately handles binary routing choices, making it indispensable for swapping dynamic layouts inside React template return blocks.
+      
+        The Ternary Operator in JavaScript is a conditional operator that evaluates a condition and returns one of two values based on whether the
+        condition is true or false. It simplifies decision-making in code, making it more concise and readable.
 
-        *   **condition:** The logical true/false boolean checkpoint being evaluated.
-        *   **?:** The logic operator token pair separating the condition, positive execution path, and negative fallback path.
-        *   **true / false branch:** The matching return paths; the left expression executes if true, the right expression executes if false.
+        *   **Condition:** A condition that evaluates to true or false.
+        *   **expressionIfTrue** The value or expression is returned if the condition is true.
+        *   **expressionIfFalse** The value or expression returned if the condition is false.
 
         *   **Syntax Structure:**
             ```javascript
-            const userValidated = true;
-
-            // Selects the target outcome option based on true/false evaluation
-            const viewState = userValidated ? "DisplayDashboard" : "DisplayLoginScreen";
+            // File: 09_Ternary_Operator.js
+            condition ? trueExpression : falseExpression
             ```
 
-    *   **2. Logical AND Short-Circuit (`&&`)**
-        Evaluates criteria statements from left to right. If the left side resolves to false, execution halts instantly. In front-end layout rendering, this provides an explicit layout toggle to output a block of elements *only* when a constraint remains true.
+    *   **2. Logical AND (`&&`)**
+       
+        The logical AND (&&) operator checks whether both operands are true. If both are true, the result is true. If any one or both operands are
+        false, the result is false.
 
         *   **prerequisiteCheck:** The state flag or conditional rule verifying if the element has permission to display.
         *   **&&:** The validation short-circuit gateway operator tokens.
@@ -292,25 +288,22 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
         *   **Syntax Structure:**
             ```javascript
-            const isMenuOpen = true;
-
-            // The right-side layout block renders ONLY if the left condition checks as true
-            const mobileMenuMarkup = isMenuOpen && "<div>Rendered Dropdown Menu Content</div>";
+            // File: 10_Logical_AND.js
+            expression1 && expression2
             ```
 
     *   **3. Nullish Coalescing (`??`)**
-        A targeted logic gate that catches missing variables. It triggers the fallback string choice on the right *only* when the primary left variable checks as exactly `null` or `undefined`, preventing valid falsy values like `0` or empty strings `""` from being cleared out.
+              The nullish coalescing (??) operator is used to handle null and undefined values in JavaScript. It allows you to assign a default
+              value when a variable does not have a valid value.
 
-        *   **primaryInput:** The variable instance targeted for standard runtime data display.
-        *   **??:** The structural nullish isolation query operator tokens.
-        *   **fallbackOption:** The fallback default data that returns instantly if the primary input missing state condition triggers.
+         * **It returns the right-hand value only when the left-hand value is null or undefined.*
+         * **It does not treat 0, false, or empty strings as nullish values.*
+         * **It is useful for setting safe default values without overwriting valid data.*
 
         *   **Syntax Structure:**
             ```javascript
-            const apiUsername = null;
-
-            // Applies the safety backup because the primary variable evaluates as null
-            const cleanDisplayHandle = apiUsername ?? "Anonymous Guest User";
+             // File: 11_Nullish_Coalescing_Operator.js 
+            const result = leftExpr ?? rightExpr;
             ```
 
 ### Day 5: Asynchronous Data Handling

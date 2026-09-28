@@ -15,39 +15,32 @@ Modern JavaScript introduces `let` and `const` to lock variables into the specif
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 01_Var_Let_Const.js
-        // var Syntax: Overwrites global loop counters unexpectedly
-        for (var i = 0; i < 3; i++) {
-            // Loops 3 times
-        }
-        console.log(i); // Outputs: 3 (i leaked outside the loop!)
+        // File 01_BlockScopeVariables.js
+        var number = 10;
+        console.log(number);       
+        var number = 20; // Re-declaration (and reassignment) is allowed with var
+        console.log(number);
         ```
 
 * **2. let Keyword:** The `let` keyword was introduced in ES6. It has block scope and cannot be re-declared in the same scope.
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 01_Var_Let_Const.js
-        // let Syntax: Perfect for values that update, like a user's game score
-        let userScore = 100;
-        userScore += 50; // Value updates to 150
-        
-        if (userScore > 100) {
-            let bonusMessage = "High Score!"; 
-        }
-        // console.log(bonusMessage); // Throws ReferenceError (Kept safe inside the if-block)
+        // File 01_BlockScopeVariables.js
+        let name = "Farhan";
+        name = "Farhan Ahmed"; // Value can be updated (reassigned)
+        // let name = "Irfan Ahmed"; //  Cannot re-declare in the same scope (Missing '=' fixed)
+        console.log(name);
         ```
 
 * **3. const Keyword:** The `const` keyword declares variables that cannot be reassigned. It is block-scoped as well.
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 01_Var_Let_Const.js
-        // const Syntax: Ideal for fixed configuration values settings
-        const API_URL = "https://example.com";
-        const MAX_LOGIN_ATTEMPTS = 5;
-        
-        // MAX_LOGIN_ATTEMPTS = 6; // Throws TypeError: Assignment to constant variable.
+        // File 01_BlockScopeVariables.js
+        const value = 100;
+        // value = 200; // This will throw TypeError: Assignment to constant variable.
+        console.log(value);
         ```
 
 **Template Literals**
@@ -57,36 +50,38 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 02_Template_Literals.js
-        const username = "Alex";
-        // Old way: "Hello, " + username + "!"
-        const greeting = `Hello, ${username}!`; 
-        console.log(greeting); // Outputs: Hello, Alex!
+        // 02_TemplateLiteralStrings.js
+        const name = "Farhan";
+        // Old way: "Hello " + name + "!"
+        const greeting = `Hello ${name}!`; 
+        console.log(greeting); // Outputs: Hello Farhan!
         ```
 
 * **2. Multi-line Strings:** Keeps multi-line formatting exactly as written in the code editor, eliminating the need for `\n` escape characters.
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 02_Template_Literals.js
-        // Old way required adding "\n" at the end of each line
-        const htmlSnippet = `
-          <div>
-            <h1>Welcome</h1>
-          </div>
-        `;
+        // 02_TemplateLiteralStrings.js
+        // Old way required adding "\n" at the end of every line
+         const listSnippet = `
+         <ul>
+           <li>Item 1</li>
+           <li>Item 2</li>
+         </ul>
+         `;
+        console.log(listSnippet);
         ```
 
 * **3. Expression Evaluation:** You can run basic math operations, logic, or call functions directly inside the `${}` wrapper.
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 02_Template_Literals.js
-        const itemPrice = 100;
-        const taxRate = 0.18;
-
-        const receipt = `Total: $${itemPrice * (1 + taxRate)}`;
-        console.log(receipt); // Outputs: Total: \$118
+        // 02_TemplateLiteralStrings.js
+        const price = 500;
+        const discount = 50;
+        // You can calculate directly inside the placeholder
+        const totalMessage = `Your total is: $${price - discount}`;
+        console.log(totalMessage);
         ```
 
 **Key Rules for Template Literals:**
@@ -106,7 +101,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 03_Arrow_Functions.js
+        // 03_ArrowFunctionsSyntax.js
         // Standard Explicit Return syntax
         const addNumbers = (a, b) => {
             return a + b;
@@ -124,7 +119,8 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 04_Object_Array_Destructuring.js
+        // 04_DataStructureDestructuring.js
+        // Object Destructuring
         // 1. Basic Syntax
         const { prop1, prop2 } = object;
 
@@ -149,7 +145,8 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 04_Object_Array_Destructuring.js
+        // 04_DataStructureDestructuring.js
+        // Array Destructuring
         // 1. Basic Syntax
         const [item1, item2] = array;
 
@@ -171,7 +168,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 05_Spread_Rest_Operators.js
+        // 05_SpreadRestOperators.js
         const user = { name: 'Alice', role: 'Admin' };
 
         // 1. Shallow Copying an Object
@@ -192,7 +189,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
     *   **Syntax Structure:**
         ```javascript
-        // File: 05_Spread_Rest_Operators.js
+        // 05_SpreadRestOperators.js
         // OBJECTS: Gathers remaining keys into a new object
         const { targetKey, ...remainingKeysObj } = myObject;
 
@@ -205,6 +202,8 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
         ```
 
 ### Day 3: Array Operations & Data Transformations (map(), filter() & reduce())
+
+*   **Immutability-Safe Array Modifiers**
 
     *   **1. `.map()` Method**
         Iterates progressively over every single element inside a source array, processes each through a transformation callback, and outputs a completely new array of matching length. React relies on this to translate raw data arrays into dynamic visual UI layouts.
@@ -262,48 +261,91 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
 ### Day 4: Logic Control & UI Switching
 
-    *   **1. Ternary Operator (`condition ? true : false`)**
-      
-        The Ternary Operator in JavaScript is a conditional operator that evaluates a condition and returns one of two values based on whether the
-        condition is true or false. It simplifies decision-making in code, making it more concise and readable.
+*   **Logical Operators**
 
-        *   **Condition:** A condition that evaluates to true or false.
-        *   **expressionIfTrue** The value or expression is returned if the condition is true.
-        *   **expressionIfFalse** The value or expression returned if the condition is false.
+    *   **1. Logical AND (&&) Operator**
+         The logical AND (&&) operator checks whether both operands are true. If both are true, the result is true. If any one or both operands are
+         false, the result is false.
 
-        *   **Syntax Structure:**
-            ```javascript
-            // File: 09_Ternary_Operator.js
-            condition ? trueExpression : falseExpression
-            ```
-
-    *   **2. Logical AND (`&&`)**
-       
-        The logical AND (&&) operator checks whether both operands are true. If both are true, the result is true. If any one or both operands are
-        false, the result is false.
-
-        *   **prerequisiteCheck:** The state flag or conditional rule verifying if the element has permission to display.
-        *   **&&:** The validation short-circuit gateway operator tokens.
-        *   **executableBlock:** The target elements or text expressions that render on screen only if the left evaluation passes.
+        *   **Key Rules:**
+            *   **Short-Circuit Evaluation:** If the first operand evaluates to `false`, JavaScript stops execution and returns that first operand immediately without looking at the second.
+            *   **Non-Boolean Returns:** It returns the first falsy value encountered, or the last truthy value if all are truthy.
+            *   **UI Switching Use Case:** Frequently used for conditional rendering in frontend frameworks (e.g., `isLoggedIn && <Dashboard />`).
 
         *   **Syntax Structure:**
             ```javascript
-            // File: 10_Logical_AND.js
+            //10_LogicalOperators.js
             expression1 && expression2
             ```
 
-    *   **3. Nullish Coalescing (`??`)**
-              The nullish coalescing (??) operator is used to handle null and undefined values in JavaScript. It allows you to assign a default
-              value when a variable does not have a valid value.
+    *   **2. Logical OR (||) Operator**
+         The logical OR (||) operator checks whether at least one of the operands is true. If either operand is true, the result is true. If both
+         operands are false, the result is false.
 
-         * **It returns the right-hand value only when the left-hand value is null or undefined.*
-         * **It does not treat 0, false, or empty strings as nullish values.*
-         * **It is useful for setting safe default values without overwriting valid data.*
+        *   **Key Rules:**
+            *   **Short-Circuit Evaluation:** If the first operand evaluates to `true`, JavaScript stops execution and returns that first operand immediately.
+            *   **Falsy Fallback Gotcha:** It treats all falsy values (like `0`, `""`, `false`, `null`, `undefined`) the same way, falling back to the second expression even if `0` or `""` are technically valid data inputs.
+            *   **Non-Boolean Returns:** It returns the first truthy value encountered, or the last value if all are falsy.
+
+          *   **Syntax Structure:**
+            ```javascript
+            //10_LogicalOperators.js
+            expression1 || expression2
+            ```
+
+   *   **3. Logical NOT (!) Operator**
+        The logical NOT (!) operator inverts the boolean value of its operand. If the operand is true, it returns false. If the operand is false,
+        it returns true.
+
+        *   **Key Rules:**
+            *   **Type Coercion:** It forces any operand into a strict boolean primitive (`true` or `false`) before inverting it.
+            *   **Double NOT (!!) Trick:** Using `!!` is a common pattern to cleanly convert any value (like a string or object) into its explicit boolean equivalent.
+            *   **Precedence:** It has a very high operator precedence, meaning it executes before arithmetic or comparison operators unless parentheses are used.
+
+       *   **Syntax Structure:**
+            ```javascript
+            //10_LogicalOperators.js
+            !expression
+            ```
+
+   *   **4. Ternary Operator (`condition ? true : false`)**
+        The Ternary Operator in JavaScript is a conditional operator that evaluates a condition and returns one of two values based on whether the
+        condition is true or false. It simplifies decision-making in code, making it more concise and readable.
+
+        *   **Key Rules:**
+            *   **Three Operands Required:** It is the only JavaScript operator that takes three distinct arguments: a condition, an if-true execution path, and an if-false execution path.
+            *   **Expression vs Statement:** Because it is an expression (evaluates to a value), it can be directly assigned to a variable or returned from a function, unlike standard `if...else` statements.
+            *   **Avoid Nesting:** Nesting multiple ternary operators reduces code readability and should generally be refactored into a `switch` or `if...else` block instead.
+
+        *   **condition:** The logical true/false boolean checkpoint being evaluated.
+        *   **?:** The logic operator token pair separating the condition, positive execution path, and negative fallback path.
+        *   **true / false branch:** The matching return paths; the left expression executes if true, the right expression executes if false.
 
         *   **Syntax Structure:**
             ```javascript
-             // File: 11_Nullish_Coalescing_Operator.js 
-            const result = leftExpr ?? rightExpr;
+            //09_TernaryOperator.js
+            condition ? trueExpression : falseExpression
+            ```
+
+   *   **5. Nullish Coalescing (`??`)**
+        The nullish coalescing operator (??) returns the right-hand operand when the left-hand operand is either null or undefined. Otherwise, it
+        returns the left-hand operand.
+
+        *   **Key Rules:**
+            *   **Strict Nullish Check:** Unlike `||`, it *only* acts on `null` and `undefined`. Values like `0`, `""`, and `false` are considered perfectly valid data and will not trigger the fallback option.
+            *   **UI Form Input Safety:** Ideal for setting UI text fields where an empty string (`""`) or the number `0` are acceptable inputs that shouldn't be overridden by defaults.
+            *   **Chaining Restrictions:** Cannot be mixed directly with `&&` or `||` operators without using explicit grouping parentheses `()` to avoid syntax errors.
+
+        *   **primaryInput:** The variable instance targeted for standard runtime data display.
+        *   **??:** The structural nullish isolation query operator tokens.
+        *   **fallbackOption:** The fallback default data that returns instantly if the primary input missing state condition triggers.
+
+        *   **Syntax Structure:**
+            ```javascript
+            const apiUsername = null;
+
+            // Applies the safety backup because the primary variable evaluates as null
+            const cleanDisplayHandle = apiUsername ?? "Anonymous Guest User";
             ```
 
 ### Day 5: Asynchronous Data Handling

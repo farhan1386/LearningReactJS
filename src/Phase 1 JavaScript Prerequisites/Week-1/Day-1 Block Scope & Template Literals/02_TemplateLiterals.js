@@ -1,13 +1,13 @@
-// 1. String Interpolation (Injecting variables)
+// 1. String Interpolation 
 
 const name = "Farhan";
 // Old way: "Hello " + name + "!"
 const greeting = `Hello ${name}!`; 
 
-console.log(greeting); // Outputs: Hello Farhan!
+console.log(greeting); 
 
 
-// 2. Multi-line Strings (Preserves formatting without \n)
+// 2. Multi-line Strings
 
 // Old way required adding "\n" at the end of every line
 const listSnippet = `
@@ -20,12 +20,11 @@ const listSnippet = `
 console.log(listSnippet);
 
 
-// 3. Expression Evaluation (Math & Logic inside \${})
+// 3. Expression Evaluation
 
 const price = 500;
 const discount = 50;
 
-// You can calculate directly inside the placeholder
 const totalMessage = `Your total is: $${price - discount}`;
 
-console.log(totalMessage); // Outputs: Your total is: \$450
+console.log(totalMessage); 

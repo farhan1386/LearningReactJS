@@ -4,25 +4,14 @@ This master documentation serves as your comprehensive reference guide for found
 
 ---
 
-##  Phase_1_JavaScript_Prerequisites / Week-1
+##  Phase 1 JavaScript Prerequisites / Week-1
 
-### Day 1: var, let, const & Template Literals
+### Day 1: Let, Const & Template Literals
 
-**Var, let & const**
+**Let & Const**
 Modern JavaScript introduces `let` and `const` to lock variables into the specific block `{}` where they are declared. This replaces the old `var` keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs.     
 
-* **1. var Keyword:** The `var` keyword is used to declare a variable. It has a function-scoped or globally-scoped behavior.
-
-    *   **Syntax Structure:**
-        ```javascript
-        // File 01_BlockScopeVariables.js
-        var number = 10;
-        console.log(number);       
-        var number = 20; // Re-declaration (and reassignment) is allowed with var
-        console.log(number);
-        ```
-
-* **2. let Keyword:** The `let` keyword was introduced in ES6. It has block scope and cannot be re-declared in the same scope.
+* **1. let Keyword:** The `let` keyword was introduced in ES6. It has block scope and cannot be re-declared in the same scope.
 
     *   **Syntax Structure:**
         ```javascript
@@ -33,7 +22,7 @@ Modern JavaScript introduces `let` and `const` to lock variables into the specif
         console.log(name);
         ```
 
-* **3. const Keyword:** The `const` keyword declares variables that cannot be reassigned. It is block-scoped as well.
+* **2. const Keyword:** The `const` keyword declares variables that cannot be reassigned. It is block-scoped as well.
 
     *   **Syntax Structure:**
         ```javascript
@@ -44,9 +33,9 @@ Modern JavaScript introduces `let` and `const` to lock variables into the specif
         ```
 
 **Template Literals**
-Template Literals (introduced in ES6) are string literals that allow embedded expressions. They make string creation vastly cleaner compared to traditional string concatenation using the `+` operator. Instead of single or double quotes, they are enclosed by the backtick (`` ` ``) character.
+Template Literals (introduced in ES6) are string literals in JavaScript enclosed by the backtick (`) character instead of single or double quotes. They allow for multi-line strings and embedded expressions.
 
-* **1. String Interpolation:** Allows you to inject variables directly into the string using the `${expression}` placeholder syntax.
+* **1. String Interpolation:** String interpolation is the feature that allows you to insert variables, mathematical operations, or functions directly into a template literal using the ${expression} placeholder syntax.
 
     *   **Syntax Structure:**
         ```javascript
@@ -57,7 +46,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
         console.log(greeting); // Outputs: Hello Farhan!
         ```
 
-* **2. Multi-line Strings:** Keeps multi-line formatting exactly as written in the code editor, eliminating the need for `\n` escape characters.
+* **2. Multi-line Strings:** Multi-line strings allow you to write text across multiple lines naturally without using the newline escape character (\n) or string concatenation (+).
 
     *   **Syntax Structure:**
         ```javascript
@@ -72,7 +61,7 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
         console.log(listSnippet);
         ```
 
-* **3. Expression Evaluation:** You can run basic math operations, logic, or call functions directly inside the `${}` wrapper.
+* **3. Expression Evaluation:** Expression evaluation means that JavaScript computes the value of any valid code you place inside the ${} placeholder before converting it into a string. You are not limited to just variables; you can execute math, evaluate conditions, or call functions on the fly.
 
     *   **Syntax Structure:**
         ```javascript
@@ -91,8 +80,8 @@ Template Literals (introduced in ES6) are string literals that allow embedded ex
 
 ### Day 2: Arrow Functions, Object & Array Destructuring, Spread & Rest Operators
 
-*   **1. Arrow Functions:**
-    Arrow functions provide a concise way to write functions using the `=>` syntax. Introduced in ES6, they are commonly used for callbacks and array methods.
+*   **1. Arrow Functions:** Arrow functions provide a concise way to write functions  
+using the `=>` syntax. Introduced in ES6, they are commonly used for callbacks and array methods.
 
     *   **functionName:** Name assigned to the arrow function variable.
     *   **parameters:** Inputs passed into the functional block inside parentheses.

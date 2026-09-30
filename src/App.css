@@ -1,184 +1,396 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+/* SelectList.css */
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+/* Component Container */
+.select-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 360px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+/* Field Label */
+.select-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 8px;
 }
 
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
-}
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
-.ticks {
+/* Dropdown Wrapper for custom indicator arrow */
+.select-wrapper {
   position: relative;
   width: 100%;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
+/* Custom indicator chevron arrow */
+.select-wrapper::after {
+  content: "▼";
+  font-size: 0.65rem;
+  color: #a0aec0;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allows user to click through arrow to open select menu */
+}
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+/* Styled Select Input */
+.custom-select {
+  width: 100%;
+  padding: 12px 40px 12px 14px; /* Generous right padding to protect text from hitting the custom arrow */
+  font-size: 1rem;
+  color: #2d3748;
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  appearance: none; /* Removes native OS styling (crucial for custom arrow styling) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Interaction States */
+.custom-select:focus {
+  outline: none;
+  border-color: #4299e1;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.custom-select:hover {
+  border-color: #cbd5e0;
+}
+
+/* Result Output Box */
+.select-output {
+  margin-top: 16px;
+  padding: 12px;
+  font-size: 0.95rem;
+  color: #2b6cb0;
+  background-color: #ebf8ff;
+  border-left: 4px solid #4299e1;
+  border-radius: 4px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Subtle fade animation for the selection text */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================
+   App.css - Custom Checkbox List Styling
+   ========================================== */
+
+/* Main Container card */
+.checkbox-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 380px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.checkbox-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #1a202c;
+  font-weight: 600;
+}
+
+/* Form layout structure */
+.checkbox-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual Row Item */
+.checkbox-item {
+  position: relative;
+}
+
+/* Hide default browser checkbox entirely */
+.custom-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Styled Label turning row into a card click target */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background-color: #f7fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  color: #4a5568;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover style for non-checked states */
+.checkbox-label:hover {
+  background-color: #edf2f7;
+  border-color: #cbd5e0;
+}
+
+/* Visual custom checkbox square */
+.checkbox-custom-box {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #a0aec0;
+  border-radius: 4px;
+  background-color: #ffffff;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Active checked states applied through input tracking */
+.custom-checkbox-input:checked + .checkbox-label {
+  background-color: #f0f5ff;
+  border-color: #3182ce;
+  color: #2b6cb0;
+}
+
+.custom-checkbox-input:checked + .checkbox-label .checkbox-custom-box {
+  background-color: #3182ce;
+  border-color: #3182ce;
+}
+
+/* Draw a crisp checkmark icon inside box when checked */
+.custom-checkbox-input:checked + .checkbox-label .checkbox-custom-box::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+/* Accessibility focus styles for keyboard navigation */
+.custom-checkbox-input:focus-visible + .checkbox-label {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.4);
+}
+
+/* Result box alert layout */
+.checkbox-output {
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: #2c5282;
+  background-color: #ebf8ff;
+  border-radius: 8px;
+  border: 1px solid #bee3f8;
+  text-align: center;
+}
+
+/* ==========================================
+   App.css - Company Dashboard & Explorer
+   ========================================== */
+
+/* Layout Base */
+.company-dashboard {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Selector Panel */
+.selector-section {
+  margin-bottom: 24px;
+}
+
+.dashboard-label {
+  display: block;
+  font-size: 0.870rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  font-size: 0.65rem;
+  color: #94a3b8;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.dashboard-select {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  font-size: 1rem;
+  color: #1e293b;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.2s;
+}
+
+.dashboard-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Company Data Display Card */
+.details-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.company-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.company-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #e2e8f0;
+  color: #475569;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Layout Info Grid Matrix */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+/* Location Blocks */
+.address-section {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+  margin-bottom: 24px;
+}
+
+.address-text {
+  margin: 4px 0 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #334155;
+}
+
+/* CTA Footer Anchor */
+.card-footer {
+  text-align: right;
+}
+
+.website-link {
+  display: inline-block;
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.website-link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Dynamic Loading Elements */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 24px;
+  text-color: #64748b;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #cbd5e1;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* CSS Keyframe Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }

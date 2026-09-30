@@ -1,0 +1,66 @@
+/* Core Structural Styles */
+.container {
+  padding: 20px;
+  border: 2px dashed #6366f1;
+  border-radius: 10px;
+  max-width: 400px;
+  background-color: #fafafa;
+}
+
+.title {
+  margin-top: 0;
+  color: #4f46e5;
+  font-family: sans-serif;
+}
+
+.description {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Button Classes */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btnPrimary {
+  background-color: #4f46e5;
+  color: white;
+}
+
+/* Dynamic State Mapping */
+.statusBadge {
+  margin-top: 15px;
+  padding: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 0.85rem;
+}
+
+.isActive {
+  background-color: #d1fae5;
+  color: #065f46;
+  border-left: 4px solid #34d399;
+}
+
+/* Kebab-case formatting targets */
+.alertBox {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.theme-info {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.theme-danger {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}

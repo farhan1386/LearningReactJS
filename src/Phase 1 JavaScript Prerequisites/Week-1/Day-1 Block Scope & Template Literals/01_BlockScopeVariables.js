@@ -1,12 +1,3 @@
-// var keyword
-
-var number = 10;
-console.log(number);
-
-var number = 20; // Re-declaration (and reassignment) is allowed with var
-console.log(number);
-
-
 // let keyword
 
 let name = "Farhan";

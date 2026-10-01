@@ -1,11 +1,11 @@
 import React from 'react';
 
-const PassProp = (props) => {
+const Greeting = ({ message }) => {
   return (
     <div style={{ padding: '10px', border: '1px solid #ccc', margin: '5px' }}>
-      <p>Received Value: <strong>{props.message}</strong></p>
+      <p>Received Value: <strong>{message}</strong></p>
     </div>
   );
 };
 
-export default PassProp;
+export default Greeting;

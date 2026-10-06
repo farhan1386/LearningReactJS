@@ -1,30 +1,56 @@
 // 1. String Interpolation 
 
-const name = "Farhan";
-// Old way: "Hello " + name + "!"
-const greeting = `Hello ${name}!`; 
+const runnerName = "Farhan";
+const distanceKM = 5;
+const caloriesBurnedPerKM = 65;
 
-console.log(greeting); 
+// Template Literal combining Interpolation, Multi-line, and Math Expression
+const workoutSummary = `
+--- Morning Workout ---
+Great job, ${runnerName}!
+You ran ${distanceKM} kilometers today.
+Total calories burned: ${distanceKM * caloriesBurnedPerKM} kcal.
+`;
+
+console.log(workoutSummary);
+
 
 
 // 2. Multi-line Strings
 
 // Old way required adding "\n" at the end of every line
-const listSnippet = `
-<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-</ul>
+
+const orderId = "ORD-9921";
+const itemName = "Wireless Mouse";
+const itemPrice = 1200;
+const quantity = 2;
+
+// 🚀 Template Literal generating an HTML template on the fly
+const invoiceHTML = `
+<div class="invoice">
+  <h3>Receipt for Order: #${orderId}</h3>
+  <p>Item: ${itemName} (x${quantity})</p>
+  <strong>Total Charged: ₹${itemPrice * quantity}</strong>
+</div>
 `;
 
-console.log(listSnippet);
+console.log(invoiceHTML);
+
 
 
 // 3. Expression Evaluation
 
-const price = 500;
-const discount = 50;
+const username = "ProGamer99";
+const finalScore = 8400;
+const currentHighScore = 10000;
 
-const totalMessage = `Your total is: $${price - discount}`;
+// Template Literal injecting values and doing quick subtraction math
+const gameOverMessage = `
+GAME OVER
+Player: ${username}
+Final Score: ${finalScore} points.
+You were only ${currentHighScore - finalScore} points away from the High Score!
+`;
 
-console.log(totalMessage); 
+console.log(gameOverMessage);
+

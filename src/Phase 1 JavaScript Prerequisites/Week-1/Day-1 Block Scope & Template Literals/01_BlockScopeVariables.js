@@ -1,16 +1,16 @@
-// let keyword
+// Constant: The user's unique ID never changes
+const userId = "user_98765";
 
-let name = "Farhan";
-name = "Farhan Ahmed"; // Value can be updated (reassigned)
+// Variable: Followers and online status change constantly
+let followerCount = 1200;
+let isOnline = true;
 
-// let name = "Irfan Ahmed"; //  Cannot re-declare in the same scope (Missing '=' fixed)
+// Updating the variables as activity happens
+followerCount = 1201; 
+isOnline = false;     
 
-console.log(name);
+// userId = "user_00000"; // Error! You cannot change a user's unique ID.
 
-
-// const keyword
-
-const value = 100;
-// value = 200; // This will throw TypeError: Assignment to constant variable.
-
-console.log(value);
+console.log(`User ID: ${userId}`);
+console.log(`Follower Count: ${followerCount}`);
+console.log(`Is Online: ${isOnline}`);  

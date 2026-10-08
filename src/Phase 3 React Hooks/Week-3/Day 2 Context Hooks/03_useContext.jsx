@@ -1,18 +1,17 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext } from "react";
 
-const UserContext = createContext(null);
+const ThemeContext = createContext("light");
 
-const ProfileCard = () => {
-  const user = useContext(UserContext);
-  return <h1>Welcome back, {user}!</h1>;
-};
-
-const App = () => {
+function App() {
   return (
-    <UserContext.Provider value="Rahul">
-      <ProfileCard />
-    </UserContext.Provider>
+    <ThemeContext.Provider value="dark">
+      <Header />
+    </ThemeContext.Provider>
   );
-};
+}
 
-export default App;
+function Header() {
+  const theme = useContext(ThemeContext);
+
+  return <h2>Current Theme: {theme}</h2>;
+}

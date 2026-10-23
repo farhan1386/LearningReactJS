@@ -1,0 +1,97 @@
+{
+  "title": "React JS Curriculum",
+  "subtitle": "Master production-ready frontend development week by week.",
+  "week1": {
+    "title": "Week 1: JavaScript Prerequisites",
+    "days": [
+      {
+        "dayNum": "Day 1",
+        "dayTitle": "Block Scope & Template Literals",
+        "files": ["01_BlockScopeVariables.js", "02_TemplateLiterals.js"],
+        "sections": [
+          {
+            "title": "Theory",
+            "icon": "📘",
+            "textColor": "text-primary",
+            "items": [
+              {
+                "label": "Let & Const",
+                "answer": "Modern JavaScript introduces `let` and `const` to lock variables into the specific block `{}` where they are declared. This replaces the old `var` keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs."
+              },
+              {
+                "label": "Analyze variable hoisting mechanics and the temporal dead zone",
+                "answer": "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope before execution phase. While <code>var</code> hoists with an uninitialized value of <code>undefined</code>, modern declarations alter this execution path.<br><br><strong>For example:</strong><br>• Calling a <code>var</code> variable before declaration returns <code>undefined</code> without crashing.<br>• Calling a <code>let</code> or <code>const</code> variable before its line of declaration throws a <code>ReferenceError</code>.<br><br>The Temporal Dead Zone (TDZ) is the exact area from the start of the block until the variable is officially declared.<br><br><strong>In short:</strong> The TDZ protects your application by forcing safe code practices, mandating variables be declared before usage."
+              },
+              {
+                "label": "Review template literal backtick string rules and interpolation expressions",
+                "answer": "Template Literals are string literals enclosed by backtick characters (`) instead of traditional single or double quotes, introducing native embedded evaluation placeholder paths.<br><br><strong>For example:</strong><br>• They allow string interpolation using the exact <code>${expression}</code> placeholder syntax configuration.<br>• They support native multi-line layout formatting strings without needing escape characters like <code>\\n</code>.<br>• They compute active JavaScript mathematical operations, conditions, or function returns inline on the fly.<br><br><strong>In short:</strong> Template literals simplify complex string combinations by executing internal inline expressions cleanly."
+              }
+            ]
+          },
+          {
+            "title": "Setup",
+            "icon": "🛠️",
+            "textColor": "text-warning",
+            "items": [
+              { "label": "Initialize JavaScript local testing environment workspace" },
+              { "label": "Create 01_BlockScopeVariables.js practice file inside project directory" },
+              { "label": "Create 02_TemplateLiterals.js practice file inside project directory" }
+            ]
+          },
+          {
+            "title": "Result",
+            "icon": "🎯",
+            "textColor": "text-success",
+            "items": [
+              { "label": "Execute script files via node environment terminal and verify variable output logs match constraints" }
+            ]
+          }
+        ]
+      },
+      {
+        "dayNum": "Day 2",
+        "dayTitle": "Modern ES6+ Syntax Shortcuts",
+        "files": ["03_ArrowFunctions.js", "04_ObjectArrayDestructuring.js", "05_SpreadRestOperators.js"],
+        "sections": [
+          {
+            "title": "Theory",
+            "icon": "📘",
+            "textColor": "text-primary",
+            "items": [
+              {
+                "label": "Analyze lexical scope this binding inside arrow functions vs normal functions",
+                "answer": "Arrow functions do not bind their own <code>this</code> context; instead, they inherit it lexically from the parent scope."
+              },
+              {
+                "label": "Master syntax patterns for object extraction and array pattern destructuring",
+                "answer": "Destructuring allows clean, unpackaged extraction of properties from objects and arrays straight into distinct local variables."
+              },
+              {
+                "label": "Differentiate shallow copying spread syntax from parameter gathering rest operations",
+                "answer": "Spread parameters unpack elements out of arrays or objects, while rest syntax groups separate incoming values into one unified array collection wrapper."
+              }
+            ]
+          },
+          {
+            "title": "Setup",
+            "icon": "🛠️",
+            "textColor": "text-warning",
+            "items": [
+              { "label": "Create and initialize 03_ArrowFunctions.js" },
+              { "label": "Create and initialize 04_ObjectArrayDestructuring.js" },
+              { "label": "Create and initialize 05_SpreadRestOperators.js" }
+            ]
+          },
+          {
+            "title": "Result",
+            "icon": "🎯",
+            "textColor": "text-success",
+            "items": [
+              { "label": "Log extracted properties and copied objects to terminal and verify shallow immutability mutations" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

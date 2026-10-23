@@ -1,6 +1,3 @@
-/* ==========================================================================
-   1. GLOBAL PROJECT BASICS & DESIGN TOKENS
-   ========================================================================== */
 :root {
   --color-background: #f8fafc;
   --color-surface: #ffffff;
@@ -26,7 +23,6 @@ body {
   min-height: 100vh;
 }
 
-/* Base Utility Keyframe Animations */
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -53,9 +49,6 @@ body {
   }
 }
 
-/* ==========================================================================
-   2. SITE CORE NAVIGATION FRAMEWORK (NAVBAR & CONTAINERS)
-   ========================================================================== */
 .navbar {
   background-color: #ffffff;
   border-bottom: 1px solid var(--color-border);
@@ -98,10 +91,6 @@ body {
   padding: 40px 20px;
 }
 
-/* ==========================================================================
-   3. SYSTEM SELECT INPUTS & DROP-DOWNS (RESOLVED COLLISIONS)
-   ========================================================================== */
-/* Generic Form drop wrapper */
 .select-wrapper {
   position: relative;
   width: 100%;
@@ -118,7 +107,6 @@ body {
   pointer-events: none;
 }
 
-/* Isolation scope 1: Standalone Select Component Container */
 .select-container {
   max-width: 360px;
   margin: 30px auto;
@@ -173,93 +161,95 @@ body {
   animation: fadeIn 0.25s ease-out;
 }
 
-/* ==========================================================================
-   4. CURRICULUM MARKETING DASHBOARD HOME PAGE
-   ========================================================================== */
+.home-wrapper {
+  padding: 40px 20px;
+}
+
 .curriculum-hero {
   text-align: center;
-  margin-bottom: 50px;
-  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .curriculum-hero h1 {
-  font-size: 3rem;
-  color: var(--color-accent-blue);
-  margin: 0 0 15px 0;
-  font-weight: 700;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 12px;
 }
 
 .curriculum-hero p {
-  color: var(--color-text-secondary);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: #9ca3af;
   margin: 0;
 }
 
 .modules-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 24px 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .module-card {
-  background-color: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 24px;
   min-height: 160px;
   text-decoration: none;
-  color: inherit;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
   transition:
-    transform 0.2s,
-    box-shadow 0.2s;
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .module-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
 }
 
 .card-top {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 12px;
+  align-items: flex-start;
 }
 
 .week-badge {
-  color: #ffffff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #ffffff;
 }
 
 .module-card-title {
+  color: #f3f4f6;
+  font-size: 1.25rem;
+  font-weight: 600;
   margin: 0;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #212529;
+  line-height: 1.4;
 }
 
 .card-bottom {
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-end;
+  margin-top: 16px;
 }
 
 .explore-link {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* ==========================================================================
-   5. DEEP INSIDE INTERIOR NAVIGATION TRACKING SCHEMES
-   ========================================================================== */
 .navigation-header {
   display: flex;
   flex-direction: column;
@@ -360,9 +350,6 @@ body {
   color: #212529;
 }
 
-/* ==========================================================================
-   6. INTERACTIVE DYNAMIC ACCORDION PROGRESS CHECKLIST VIEW
-   ========================================================================== */
 .checklist-layout-container {
   margin-top: 10px;
 }
@@ -495,6 +482,7 @@ body {
   font-size: 0.7rem;
   color: #94a3b8;
 }
+
 .accordion-content-panel {
   padding: 5px 25px 25px 25px;
   background-color: #ffffff;
@@ -550,23 +538,27 @@ body {
   cursor: pointer;
   accent-color: #007bff;
 }
+
 .custom-check-text {
   line-height: 1.4;
 }
+
 .checked-label .custom-check-text {
   color: #94a3b8;
   text-decoration: line-through;
 }
+
 .empty-day-state {
   color: #94a3b8;
   padding: 10px 0;
   font-size: 0.9rem;
 }
-/* Right Side Sticky Widget Card */
+
 .right-progress-panel {
   position: sticky;
   top: 30px;
 }
+
 .progress-sticky-card {
   background-color: #ffffff;
   border: 1px solid var(--color-border);
@@ -574,12 +566,14 @@ body {
   padding: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
+
 .progress-sticky-card h3 {
   margin: 0 0 15px 0;
   font-size: 1.05rem;
   font-weight: 600;
   color: #007bff;
 }
+
 .progress-bar-track {
   background-color: #e9ecef;
   height: 12px;
@@ -587,10 +581,12 @@ body {
   overflow: hidden;
   margin-bottom: 8px;
 }
+
 .progress-bar-fill {
   height: 100%;
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .progress-meta-text {
   font-size: 0.85rem;
   color: #6c757d;
@@ -618,9 +614,6 @@ body {
 .reset-progress-btn:hover {
   background-color: rgba(220, 53, 69, 0.05);
 }
-/* ==========================================================================
-7. POPUP CENTRALIZED DOCUMENTATION MODAL METRICS
-========================================================================== */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -731,10 +724,6 @@ body {
   font-family: monospace;
   white-space: pre-wrap;
 }
-/* ==========================================================================
-8. INPUT EXPERIMENTAL MINI-WIDGET COMPONENTS (CHECKBOXES & TODO CARDS)
-========================================================================== /
-/ Standalone Checkbox UI Module */
 .checkbox-container {
   max-width: 380px;
   margin: 40px auto;
@@ -827,9 +816,6 @@ body {
   border: 1px solid #bee3f8;
   text-align: center;
 }
-/* ==========================================================================
-9. INDEPENDENT CLIENT / COMPANY INFORMATION EXPLORER CARD
-========================================================================== */
 .company-dashboard {
   max-width: 500px;
   margin: 40px auto;
@@ -843,7 +829,7 @@ body {
 }
 .dashboard-label {
   display: block;
-  font-size: 0.87rem;
+  font-size: 0.87amp;
   font-weight: 600;
   color: #475569;
   margin-bottom: 8px;
@@ -953,9 +939,6 @@ body {
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
-/* ==========================================================================
-10. INTERACTIVE DATATABLE TODO LIST APP CARD
-========================================================================== */
 .dashboard-header {
   border-bottom: 1px solid var(--color-border);
   padding-bottom: 16px;
@@ -1079,7 +1062,6 @@ body {
   background-color: #f8fafc;
   border-left: 4px solid #007bff;
 }
-
 .active-day-card .accordion-trigger-row {
   background-color: #f1f5f9;
 }
@@ -1091,7 +1073,6 @@ body {
   width: 100%;
   margin-bottom: 40px;
 }
-
 .module-banner-header {
   width: 100%;
   background-color: #007bff;
@@ -1105,7 +1086,6 @@ body {
   gap: 8px;
   text-align: center;
 }
-
 .module-badge-tag {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
@@ -1117,7 +1097,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
 .week-checklist-heading {
   margin: 0;
   font-size: 1.8rem;
@@ -1125,7 +1104,6 @@ body {
   color: #ffffff;
   line-height: 1.3;
 }
-
 .back-to-curriculum-btn {
   align-self: center;
   background: #ffffff;
@@ -1138,7 +1116,6 @@ body {
   font-weight: 500;
   transition: all 0.2s;
 }
-
 .back-to-curriculum-btn:hover {
   background-color: #f8fafc;
   border-color: #a0aec0;
@@ -1146,12 +1123,10 @@ body {
 .has-popup-link .custom-check-text {
   cursor: pointer;
 }
-
 .has-popup-link .custom-check-text:hover {
   color: #0056b3;
   text-decoration: underline;
 }
-
 .modal-center-overlay {
   position: fixed;
   top: 0;
@@ -1166,108 +1141,331 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
-
 .modal-center-window {
   background-color: #ffffff;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 680px;
+  border-radius: 12px;
+  width: 92%;
+  max-width: 950px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-  animation: slideUp 0.2s ease-out;
-  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #cbd5e1;
 }
-
 .modal-center-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
+  padding: 20px 32px;
   border-bottom: 1px solid #e2e8f0;
 }
-
 .modal-center-header h2 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #1a202c;
+  color: #0f172a;
 }
-
 .modal-center-close-x {
   background: transparent;
   border: none;
-  font-size: 1.5rem;
-  color: #a0aec0;
+  font-size: 1.75rem;
+  color: #94a3b8;
   cursor: pointer;
   line-height: 1;
 }
-
 .modal-center-close-x:hover {
-  color: #4a5568;
+  color: #475569;
 }
-
 .modal-center-body {
-  padding: 24px;
+  padding: 32px;
   overflow-y: auto;
-  max-height: 60vh;
+  max-height: 70vh;
+  text-align: left !important;
 }
-
 .modal-primary-text {
-  margin: 0 0 20px 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #4a5568;
+  margin: 0 0 24px 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #334155;
 }
-
 .modal-examples-section h3 {
-  margin: 0 0 10px 0;
-  font-size: 0.95rem;
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #4a5568;
+  color: #334155;
 }
-
 .modal-bullets-list {
-  margin: 0 0 20px 0;
-  padding-left: 20px;
+  margin: 0 0 24px 0;
+  padding-left: 24px;
 }
-
 .modal-bullets-list li {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #4a5568;
-  margin-bottom: 8px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #334155;
+  margin-bottom: 10px;
 }
-
 .modal-summary-text {
-  margin: 20px 0 0 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #4a5568;
+  margin: 24px 0 0 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #334155;
 }
-
 .modal-center-footer {
   display: flex;
   justify-content: flex-end;
-  padding: 16px 24px;
+  padding: 20px 32px;
   border-top: 1px solid #e2e8f0;
   background-color: #f8fafc;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.modal-close-action-btn {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.modal-close-action-btn:hover {
+  background-color: #0b5ed7;
 }
 
-.modal-close-action-btn {
-  background-color: #64748b;
+.code-viewer-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.code-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a;
+  padding: 8px 16px;
+  border-bottom: 1px solid #334155;
+}
+
+.code-lang-badge {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.copy-code-action-btn {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-code-action-btn:hover {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+.modal-code-block {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 24px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left !important;
+  margin: 0;
+  white-space: pre;
+  border: 1px solid #1e293b;
+}
+
+.modal-code-block code {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.modal-center-body {
+  text-align: left !important;
+}
+
+.modal-title-left-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-action-right-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-lang-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #e2e8f0;
+  color: #334155;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.modal-run-code-btn {
+  background-color: #10b981;
   color: #ffffff;
   border: none;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   cursor: pointer;
-  transition: background-color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
 }
 
-.modal-close-action-btn:hover {
-  background-color: #475569;
+.modal-run-code-btn:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.modal-run-code-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(5, 150, 105, 0.2);
+}
+
+.modal-copy-header-btn {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modal-copy-header-btn:hover {
+  background-color: #334155;
+  color: #ffffff;
+  border-color: #64748b;
+}
+
+.modal-copy-header-btn:active {
+  background-color: #1e293b;
+}
+
+.sandbox-terminal-output-container {
+  background-color: #0b0f19;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 16px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-bar-header {
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+}
+
+.terminal-clear-btn {
+  background: transparent;
+  border: 1px solid #475569;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.terminal-clear-btn:hover {
+  background-color: #334155;
+  color: #f8fafc;
+  border-color: #64748b;
+}
+
+.terminal-logs-screen {
+  padding: 16px;
+  min-height: 120px;
+  max-height: 250px;
+  overflow-y: auto;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  color: #f8fafc;
+  background-color: #0b0f19;
+}
+
+.terminal-log-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #1e293b;
+  font-family: "Fira Code", monospace;
+  white-space: pre-wrap;
+}
+
+.terminal-log-row:last-child {
+  border-bottom: none;
+}
+
+.terminal-log-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.terminal-timestamp {
+  color: #4b5563;
+  font-size: 0.8rem;
+  user-select: none;
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.terminal-log-text {
+  color: #38bdf8;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.error-log .terminal-log-text {
+  color: #f87171 !important;
+}
+
+.terminal-placeholder {
+  color: #4b5563;
+  font-style: italic;
+  display: block;
+  text-align: left;
+  padding: 8px;
 }

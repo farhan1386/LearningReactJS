@@ -1,97 +1,369 @@
 {
   "title": "React JS Curriculum",
   "subtitle": "Master production-ready frontend development week by week.",
-  "week1": {
-    "title": "Week 1: JavaScript Prerequisites",
-    "days": [
-      {
-        "dayNum": "Day 1",
-        "dayTitle": "Block Scope & Template Literals",
-        "files": ["01_BlockScopeVariables.js", "02_TemplateLiterals.js"],
-        "sections": [
-          {
-            "title": "Theory",
-            "icon": "📘",
-            "textColor": "text-primary",
-            "items": [
-              {
-                "label": "Let & Const",
-                "answer": "Modern JavaScript introduces `let` and `const` to lock variables into the specific block `{}` where they are declared. This replaces the old `var` keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs."
-              },
-              {
-                "label": "Analyze variable hoisting mechanics and the temporal dead zone",
-                "answer": "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope before execution phase. While <code>var</code> hoists with an uninitialized value of <code>undefined</code>, modern declarations alter this execution path.<br><br><strong>For example:</strong><br>• Calling a <code>var</code> variable before declaration returns <code>undefined</code> without crashing.<br>• Calling a <code>let</code> or <code>const</code> variable before its line of declaration throws a <code>ReferenceError</code>.<br><br>The Temporal Dead Zone (TDZ) is the exact area from the start of the block until the variable is officially declared.<br><br><strong>In short:</strong> The TDZ protects your application by forcing safe code practices, mandating variables be declared before usage."
-              },
-              {
-                "label": "Review template literal backtick string rules and interpolation expressions",
-                "answer": "Template Literals are string literals enclosed by backtick characters (`) instead of traditional single or double quotes, introducing native embedded evaluation placeholder paths.<br><br><strong>For example:</strong><br>• They allow string interpolation using the exact <code>${expression}</code> placeholder syntax configuration.<br>• They support native multi-line layout formatting strings without needing escape characters like <code>\\n</code>.<br>• They compute active JavaScript mathematical operations, conditions, or function returns inline on the fly.<br><br><strong>In short:</strong> Template literals simplify complex string combinations by executing internal inline expressions cleanly."
-              }
-            ]
-          },
-          {
-            "title": "Setup",
-            "icon": "🛠️",
-            "textColor": "text-warning",
-            "items": [
-              { "label": "Initialize JavaScript local testing environment workspace" },
-              { "label": "Create 01_BlockScopeVariables.js practice file inside project directory" },
-              { "label": "Create 02_TemplateLiterals.js practice file inside project directory" }
-            ]
-          },
-          {
-            "title": "Result",
-            "icon": "🎯",
-            "textColor": "text-success",
-            "items": [
-              { "label": "Execute script files via node environment terminal and verify variable output logs match constraints" }
-            ]
-          }
-        ]
-      },
-      {
-        "dayNum": "Day 2",
-        "dayTitle": "Modern ES6+ Syntax Shortcuts",
-        "files": ["03_ArrowFunctions.js", "04_ObjectArrayDestructuring.js", "05_SpreadRestOperators.js"],
-        "sections": [
-          {
-            "title": "Theory",
-            "icon": "📘",
-            "textColor": "text-primary",
-            "items": [
-              {
-                "label": "Analyze lexical scope this binding inside arrow functions vs normal functions",
-                "answer": "Arrow functions do not bind their own <code>this</code> context; instead, they inherit it lexically from the parent scope."
-              },
-              {
-                "label": "Master syntax patterns for object extraction and array pattern destructuring",
-                "answer": "Destructuring allows clean, unpackaged extraction of properties from objects and arrays straight into distinct local variables."
-              },
-              {
-                "label": "Differentiate shallow copying spread syntax from parameter gathering rest operations",
-                "answer": "Spread parameters unpack elements out of arrays or objects, while rest syntax groups separate incoming values into one unified array collection wrapper."
-              }
-            ]
-          },
-          {
-            "title": "Setup",
-            "icon": "🛠️",
-            "textColor": "text-warning",
-            "items": [
-              { "label": "Create and initialize 03_ArrowFunctions.js" },
-              { "label": "Create and initialize 04_ObjectArrayDestructuring.js" },
-              { "label": "Create and initialize 05_SpreadRestOperators.js" }
-            ]
-          },
-          {
-            "title": "Result",
-            "icon": "🎯",
-            "textColor": "text-success",
-            "items": [
-              { "label": "Log extracted properties and copied objects to terminal and verify shallow immutability mutations" }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "weeks": [
+    {
+      "id": "phase-1",
+      "badgeText": "Week 1",
+      "badgeColor": "#3b82f6",
+      "title": "JavaScript Prerequisites for React JS",
+      "days": [
+        {
+          "dayNum": "Day 1",
+          "dayTitle": "Let, Const & Template Literals",
+          "files": ["01_BlockScopeVariables.js", "02_TemplateLiterals.js"],
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "Let & Const Variable Scoping rules",
+                  "answer": "<strong>Let & Const:</strong> Modern JavaScript introduces <code>let</code> and <code>const</code> to lock variables into the specific block <code>{}</code> where they are declared. This replaces the old <code>var</code> keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs.<br><br><strong>• 1. let Keyword:</strong> The <code>let</code> keyword was introduced in ES6. It has block scope and cannot be re-declared in the same scope.<br><br><strong>• 2. const Keyword:</strong> The <code>const</code> keyword declares variables that cannot be reassigned. It is block-scoped as well."
+                },
+                {
+                  "label": "Template Literals & String Interpolation Rules",
+                  "answer": "<strong>Template Literals:</strong> Template Literals (introduced in ES6) are string literals in JavaScript enclosed by the backtick (`) character instead of single or double quotes. They allow for multi-line strings and embedded expressions.<br><br><strong>• 1. String Interpolation:</strong> String interpolation is the feature that allows you to insert variables, mathematical operations, or functions directly into a template literal using the <code>${expression}</code> placeholder syntax."
+                },
+                {
+                  "label": "Multi-line Strings & Inline Expression Evaluation Rules",
+                  "answer": "<strong>• 2. Multi-line Strings:</strong> Multi-line strings allow you to write text across multiple lines naturally without using the newline escape character (<code>\\n</code>) or string concatenation (+).<br><br><strong>• 3. Expression Evaluation:</strong> Expression evaluation means that JavaScript computes the value of any valid code you place inside the <code>${}</code> placeholder before converting it into a string. You are not limited to just variables; you can execute math, evaluate conditions, or call functions on the fly.<br><br><strong>Key Rules for Template Literals:</strong><br>• <strong>The Character:</strong> Always use backticks (`), not single quotes (') or double quotes (\").<br>• <strong>The Placeholder:</strong> Any JavaScript code inside <code>${}</code> will be executed and converted into text inside the string."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "01_BlockScopeVariables.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-1 Block Scope & Template Literals/01_BlockScopeVariables.js"
+                },
+                {
+                  "label": "02_TemplateLiterals.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-1 Block Scope & Template Literals/02_TemplateLiterals.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 2",
+          "dayTitle": "Arrow Functions, Destructuring, Spread & Rest Operators",
+          "files": [
+            "03_ArrowFunctionsSyntax.js",
+            "04_DataStructureDestructuring.js",
+            "05_SpreadRestOperators.js"
+          ],
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "1. Arrow Functions Syntax & Scoping Rules",
+                  "answer": "<strong>Arrow Functions:</strong> Arrow functions provide a concise way to write functions using the <code>=&gt;</code> syntax. Introduced in ES6, they are commonly used for callbacks and array methods.<br><br><strong>Key Structural Components:</strong><br>• <strong>functionName:</strong> Name assigned to the arrow function variable.<br>• <strong>parameters:</strong> Inputs passed into the functional block inside parentheses.<br>• <strong>=&gt;:</strong> The structural arrow token notation used to define the function and bind parameters to execution logic.<br>• <strong>{}:</strong> Contains the function body scoping execution code lines (optional for implicit returns)."
+                },
+                {
+                  "label": "2. Object & Array Destructuring Unpacking Rules",
+                  "answer": "<strong>2. Object Destructuring:</strong> Object destructuring extracts properties from an object based on their key names.<br><br><strong>3. Array Destructuring:</strong> Array Destructuring unpacks elements from an iterable (like an array or string) based on their ordered position (index)."
+                },
+                {
+                  "label": "3. Spread vs. Rest Operators Mechanics",
+                  "answer": "<strong>4. Spread Operator:</strong> The spread operator (<code>...</code>) in JavaScript allows an iterable (like an array or string) or an object expression to be expanded in places where zero or more arguments or elements are expected.<br><br><strong>5. Rest Operator:</strong> The rest operator uses the exact same syntax (<code>...</code>) as the spread operator, but it does the exact opposite: it gathers multiple separate items into a single array or object collection."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "03_ArrowFunctionsSyntax.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-2 Modern ES6+ Syntax Shortcuts/03_ArrowFunctionsSyntax.js"
+                },
+                {
+                  "label": "04_DataStructureDestructuring.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-2 Modern ES6+ Syntax Shortcuts/04_DataStructureDestructuring.js"
+                },
+                {
+                  "label": "05_SpreadRestOperators.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-2 Modern ES6+ Syntax Shortcuts/05_SpreadRestOperators.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 3",
+          "dayTitle": "Array Operations & Data Transformations (map(), filter() & reduce())",
+          "files": [
+            "06_ArrayMapTransform.js",
+            "07_ArrayFilterMethods.js",
+            "08_ArrayReduceLogic.js"
+          ],
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "1. .map() Method Iterations & Transformations",
+                  "answer": "<strong>1. .map() Method</strong> Iterates progressively over every single element inside a source array, processes each through a transformation callback, and outputs a completely new array of matching length. React relies on this to translate raw data arrays into dynamic visual UI layouts.<br><br><strong>Key Structural Parameters:</strong><br>• <strong>arrayTarget:</strong> The base collection array variable being iterated over.<br>• <strong>callbackFunction:</strong> The arrow execution loop triggered sequentially against every item.<br>• <strong>(value, index):</strong> Parameters representing the current item data object and its matching index position tracking integer.<br>• <strong>return:</strong> Explicitly passes the transformed layout structure into the newly compiled output array context."
+                },
+                {
+                  "label": "2. .filter() Method Constraints & State Controls",
+                  "answer": "<strong>2. .filter() Method</strong> Runs a conditional true/false checking function over every element in an array. If an item matches the criteria (returns true), it is duplicated into a newly created sub-array, leaving the initial data container unchanged. Essential for handling state actions like item deletion.<br><br><strong>Key Structural Parameters:</strong><br>• <strong>arrayTarget:</strong> The database collection array container holding historical records.<br>• <strong>evaluationCriteria:</strong> A logical constraint validation expression executed against every item.<br>• <strong>return true/false:</strong> Directs execution; true duplicates the object to the new container, false strips it from the outcome array."
+                },
+                {
+                  "label": "3. .reduce() Method Aggregations & Logic",
+                  "answer": "<strong>3. .reduce() Method</strong> Processes every entry of an array sequentially against a carrying accumulator variable, condensing the entire set of elements down into a single final compiled output value (such as a cumulative sum total or an aggregated object map).<br><br><strong>Key Structural Parameters:</strong><br>• <strong>accumulator:</strong> The temporary collector tracking the growing values across successive iterations.<br>• <strong>currentValue:</strong> The parameter item referencing the active record index under review.<br>• <strong>initialValue:</strong> The mandatory parameter value setting the primary initialization index baseline for the accumulator."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "06_ArrayMapTransform.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-3 Array Operations & Data Transformations/06_ArrayMapTransform.js"
+                },
+                {
+                  "label": "07_ArrayFilterMethods.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-3 Array Operations & Data Transformations/07_ArrayFilterMethods.js"
+                },
+                {
+                  "label": "08_ArrayReduceLogic.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-3 Array Operations & Data Transformations/08_ArrayReduceLogic.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 4",
+          "dayTitle": "Logic Control & UI Switching",
+          "files": ["09_TernaryOperator.js", "10_LogicalOperators.js"],
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "1. Logical AND (&&) & Logical OR (||) Operators Mechanics",
+                  "answer": "<strong>1. Logical AND (&&) Operator:</strong> The logical AND (<code>&&</code>) operator checks whether both operands are true. If both are true, the result is true. If any one or both operands are false, the result is false.<br>• <strong>Short-Circuit Evaluation:</strong> If the first operand evaluates to <code>false</code>, JavaScript stops execution and returns that first operand immediately without looking at the second.<br>• <strong>Non-Boolean Returns:</strong> It returns the first falsy value encountered, or the last truthy value if all are truthy.<br>• <strong>UI Switching Use Case:</strong> Frequently used for conditional rendering in frontend frameworks (e.g., <code>isLoggedIn && &lt;Dashboard /&gt;</code>).<br><br><strong>2. Logical OR (||) Operator:</strong> The logical OR (<code>||</code>) operator checks whether at least one of the operands is true. If either operand is true, the result is true. If both operands are false, the result is false.<br>• <strong>Short-Circuit Evaluation:</strong> If the first operand evaluates to <code>true</code>, JavaScript stops execution and returns that first operand immediately.<br>• <strong>Falsy Fallback Gotcha:</strong> It treats all falsy values (like <code>0</code>, <code>\"\"</code>, <code>false</code>, <code>null</code>, <code>undefined</code>) the same way, falling back to the second expression even if <code>0</code> or <code>\"\"</code> are technically valid data inputs.<br>• <strong>Non-Boolean Returns:</strong> It returns the first truthy value encountered, or the last value if all are falsy."
+                },
+                {
+                  "label": "2. Logical NOT (!) Type Coercion & Precedence Rules",
+                  "answer": "<strong>3. Logical NOT (!) Operator:</strong> The logical NOT (<code>!</code>) operator inverts the boolean value of its operand. If the operand is true, it returns false. If the operand is false, it returns true.<br>• <strong>Type Coercion:</strong> It forces any operand into a strict boolean primitive (<code>true</code> or <code>false</code>) before inverting it.<br>• <strong>Double NOT (!!) Trick:</strong> Using <code>!!</code> is a common pattern to cleanly convert any value (like a string or object) into its explicit boolean equivalent.<br>• <strong>Precedence:</strong> It has a very high operator precedence, meaning it executes before arithmetic or comparison operators unless parentheses are used."
+                },
+                {
+                  "label": "3. Ternary Operator (condition ? true : false) Component Architecture",
+                  "answer": "<strong>4. Ternary Operator (condition ? true : false):</strong> The Ternary Operator in JavaScript is a conditional operator that evaluates a condition and returns one of two values based on whether the condition is true or false. It simplifies decision-making in code, making it more concise and readable.<br>• <strong>Three Operands Required:</strong> It is the only JavaScript operator that takes three distinct arguments: a condition, an if-true execution path, and an if-false execution path.<br>• <strong>Expression vs Statement:</strong> Because it is an expression (evaluates to a value), it can be directly assigned to a variable or returned from a function, unlike standard <code>if...else</code> statements.<br>• <strong>Avoid Nesting:</strong> Nesting multiple ternary operators reduces code readability and should generally be refactored into a <code>switch</code> or <code>if...else</code> block instead.<br><br><strong>Structural Components:</strong><br>• <strong>condition:</strong> The logical true/false boolean checkpoint being evaluated.<br>• <strong>?:</strong> The logic operator token pair separating the condition, positive execution path, and negative fallback path.<br>• <strong>true / false branch:</strong> The matching return paths; the left expression executes if true, the right expression executes if false."
+                },
+                {
+                  "label": "4. Nullish Coalescing (??) Form Input Safety Guidelines",
+                  "answer": "<strong>5. Nullish Coalescing (??):</strong> The nullish coalescing operator (<code>??</code>) returns the right-hand operand when the left-hand operand is either null or undefined. Otherwise, it returns the left-hand operand.<br>• <strong>Strict Nullish Check:</strong> Unlike <code>||</code>, it only acts on <code>null</code> and <code>undefined</code>. Values like <code>0</code>, <code>\"\"</code>, and <code>false</code> are considered perfectly valid data and will not trigger the fallback option.<br>• <strong>UI Form Input Safety:</strong> Ideal for setting UI text fields where an empty string (<code>\"\"</code>) or the number <code>0</code> are acceptable inputs that shouldn't be overridden by defaults.<br>• <strong>Chaining Restrictions:</strong> Cannot be mixed directly with <code>&&</code> or <code>||</code> operators without using explicit grouping parentheses <code>()</code> to avoid syntax errors.<br><br><strong>Structural Components:</strong><br>• <strong>primaryInput:</strong> The variable instance targeted for standard runtime data display.<br>• <strong>??:</strong> The structural nullish isolation query operator tokens.<br>• <strong>fallbackOption:</strong> The fallback default data that returns instantly if the primary input missing state condition triggers."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "09_TernaryOperator.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-4 Logic Control & UI Switching/09_TernaryOperator.js"
+                },
+                {
+                  "label": "10_LogicalOperators.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-4 Logic Control & UI Switching/10_LogicalOperators.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 5",
+          "dayTitle": "Asynchronous Data Handling",
+          "files": ["11_PromisesAsyncAwait.js", "12_FetchAPI.js"],
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "1. Promises & Async/Await Architecture Mechanics",
+                  "answer": "<strong>1. Promises & Async/Await:</strong> Handles heavy, delayed operational loops (like network handshakes or disk writing tasks) out-of-band. The async/await syntax allows you to layout asynchronous response trees structurally so they read like sequential, top-down synchronous code lines.<br><br><strong>Key Structural Rules:</strong><br>• <strong>async:</strong> A modifier keyword placed before a function declaration to force the block to yield a Promise wrapper instance context.<br>• <strong>await:</strong> An inline execution control statement that halts function progression until the targeted Promise completes its operation cycle.<br>• <strong>try...catch:</strong> The error containment scoping framework that hooks into exception logs to prevent operational faults from breaking execution threads."
+                },
+                {
+                  "label": "2. fetch() API Request Pipelines & JSON Parsing",
+                  "answer": "<strong>2. fetch() API:</strong> The modern standard native utility built into browsers used to dispatch data requests across internet channels. It connects to endpoint servers, catches response packets, and unpacks the raw header data down into readable JSON objects.<br><br><strong>Key Pipeline Steps:</strong><br>• <strong>fetch(url):</strong> Dispatches a web request across network pipelines to a targeted URL string endpoint.<br>• <strong>baselineResponse:</strong> The allocation container variable caching the raw network data stream and header attributes.<br>• <strong>.json():</strong> A built-in asynchronous parsing method that converts text streams into usable JavaScript object schemas."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "11_PromisesAsyncAwait.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-5 Asynchronous Data Handling/11_PromisesAsyncAwait.js"
+                },
+                {
+                  "label": "12_FetchAPI.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-5 Asynchronous Data Handling/12_FetchAPI.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 6",
+          "dayTitle": "Object Methods & Optional Chaining",
+          "files": [
+            "14_ObjectMethodsTransformation.js",
+            "15_OptionalChainingProtection.js"
+          ],
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "1. Object Operations & Key-Value Matrix Transformations",
+                  "answer": "<strong>1. Object Operations (Object.keys(), Object.values(), Object.entries()):</strong> Native static utility methods that transform complex key-value object structures into indexed array sets. React relies heavily on these transformations to loop through and map object data models into dynamic visual element lists.<br><br><strong>Key Structural Transformers:</strong><br>• <strong>Object.keys(targetObj):</strong> Static method that extracts an array containing only the string property names (keys) of the passed object.<br>• <strong>Object.values(targetObj):</strong> Static method that extracts an array containing only the evaluation values assigned to the object properties.<br>• <strong>Object.entries(targetObj):</strong> Static method that unpacks the object into a multi-dimensional array matrix composed of structured [key, value] pairs."
+                },
+                {
+                  "label": "2. Optional Chaining (?.) Safe Property Navigation Gateway Rules",
+                  "answer": "<strong>2. Optional Chaining (?.):</strong> A data checkpoint safety operator that guards property lookups. It halts evaluation and returns <code>undefined</code> instantly if any reference pointer down the chain is found to be <code>null</code> or <code>undefined</code>, preventing terminal runtime execution exceptions.<br><br><strong>Key Structural Components:</strong><br>• <strong>rootObject:</strong> The parent data structure or API response block targeted for value retrieval.<br>• <strong>?. :</strong> The conditional verification gateway operator punctuation that short-circuits evaluation if the left operand is nullish.<br>• <strong>nestedProperty:</strong> The target variable key situated deep inside unverified data sub-trees."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "14_ObjectMethodsTransformation.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-6 Object Methods & Optional Chaining/14_ObjectMethodsTransformation.js"
+                },
+                {
+                  "label": "15_OptionalChainingProtection.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-6 Object Methods & Optional Chaining/15_OptionalChainingProtection.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 7",
+          "dayTitle": "ES6 Modules (Import/Export) & Error Handling",
+          "files": [
+            "16_ModuleDataExporter.js",
+            "17_ModuleDataImporter.js",
+            "18_ErrorHandlingArchitecture.js"
+          ],
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "1. ES6 Modules Encapsulation & File Linkage Paths",
+                  "answer": "<strong>1. ES6 Modules (import and export):</strong> The native mechanism for splitting monolithic applications into isolated script assets. It supports explicit encapsulation, where variables, functions, or components must be explicitly dispatched from a source file before another asset can capture them.<br><br><strong>Key Structural Directives:</strong><br>• <strong>export default:</strong> Declares the baseline primary fallback module payload from a file; can be imported using any arbitrary local alias.<br>• <strong>export const:</strong> Dispatches isolated named assets from a file; forcing the capturing file to map them inside strict destructuring braces.<br>• <strong>import { named } from \"path\":</strong> Structural binding gateway linking independent module contexts together via localized file system paths."
+                },
+                {
+                  "label": "2. Error Management Patterns & Scoped Catch Handlers",
+                  "answer": "<strong>2. Error Management Patterns (try...catch...finally):</strong> A declarative framework configured to isolate risky or unstable calculations. It intercepts unexpected runtime execution failures, handles them gracefully via fallback tracking scopes, and runs terminal maintenance operations.<br><br><strong>Key Exception Handling Scopes:</strong><br>• <strong>try:</strong> Scopes out the target code execution region that might experience exceptions (such as network handshakes or corrupted data blocks).<br>• <strong>catch(error):</strong> The automated rescue block that assumes control if a system fault triggers, binding the error telemetry to an error object parameter.<br>• <strong>finally:</strong> An unconditional code path block guaranteed to execute at the end of the chain, regardless of whether a fault occurred."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "16_ModuleDataExporter.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-7 ES6 Modules & Error Handling/16_ModuleDataExporter.js"
+                },
+                {
+                  "label": "17_ModuleDataImporter.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-7 ES6 Modules & Error Handling/17_ModuleDataImporter.js"
+                },
+                {
+                  "label": "18_ErrorHandlingArchitecture.js",
+                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-7 ES6 Modules & Error Handling/18_ErrorHandlingArchitecture.js"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "badgeText": "Week 2",
+      "badgeColor": "#6b7280",
+      "title": "Core React Concepts",
+      "days": []
+    },
+    {
+      "id": "phase-3",
+      "badgeText": "Week 3",
+      "badgeColor": "#10b981",
+      "title": "React Hooks",
+      "days": []
+    },
+    {
+      "id": "phase-4",
+      "badgeText": "Week 4",
+      "badgeColor": "#06b6d4",
+      "title": "Side Effects and Ecosystem",
+      "days": []
+    },
+    {
+      "id": "phase-5",
+      "badgeText": "Week 5",
+      "badgeColor": "#f59e0b",
+      "title": "Advanced Routing",
+      "days": []
+    },
+    {
+      "id": "phase-6",
+      "badgeText": "Week 6",
+      "badgeColor": "#ef4444",
+      "title": "State Management",
+      "days": []
+    },
+    {
+      "id": "phase-7",
+      "badgeText": "Week 7",
+      "badgeColor": "#111827",
+      "title": "Performance Optimization",
+      "days": []
+    },
+    {
+      "id": "phase-8",
+      "badgeText": "Week 8",
+      "badgeColor": "#2563eb",
+      "title": "Testing & Deployment",
+      "days": []
+    }
+  ]
 }

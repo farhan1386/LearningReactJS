@@ -1,30 +1,27 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import curriculumData from "../../data/curriculum.json";
+import curriculumData from "../../../data/curriculum.json";
 import ProgressPanel from "../components/ProgressPanel";
 import SandboxModal from "../components/SandboxModal";
-import { useWeekProgress } from "../hooks/useWeekProgress";
+import { useWeekProgress } from "../../../hooks/useWeekProgress";
 
-const codeModules = import.meta.glob(
-  "/src/Phase 1 JavaScript Prerequisites/**/*.js",
-  {
-    query: "?raw",
-    import: "default",
-  },
-);
+const codeModules = import.meta.glob("/src/features/**/*.js", {
+  query: "?raw",
+  import: "default",
+});
 
-// Inner sub-component to handle independent scrollHeight DOM calculations per day panel
-function AccordionItem({
+const AccordionItem = ({
   day,
   dayId,
   isExpanded,
   onToggle,
   completedItems,
   handleLabelClick,
-}) {
+}) => {
   const panelRef = useRef(null);
   const isActiveRoute =
-    (dayId ? dayId.replace("day-", "Day ") : "Day 1") === day.dayNum;
+    (dayId ? dayId.toLowerCase().replace("day-", "Day ") : "Day 1") ===
+    day.dayNum;
 
   return (
     <div
@@ -38,7 +35,12 @@ function AccordionItem({
           <span className="day-badge-pill">{day.dayNum}</span>
           <span className="day-title-text">{day.dayTitle}</span>
         </div>
-        <span className="chevron-icon">{isExpanded ? "▲" : "▼"}</span>
+        <span
+          className="chevron-icon"
+          style={{ transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)" }}
+        >
+          ▼
+        </span>
       </div>
 
       <div
@@ -49,7 +51,7 @@ function AccordionItem({
             ? `${panelRef.current?.scrollHeight || 0}px`
             : "0px",
           overflow: "hidden",
-          transition: "height 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "height 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
         <div className="accordion-content-panel">
@@ -94,24 +96,21 @@ function AccordionItem({
       </div>
     </div>
   );
-}
+};
 
-export default function WeekPage() {
+const WeekPage = () => {
   const { weekId, dayId } = useParams();
   const navigate = useNavigate();
-
   const week = curriculumData?.weeks?.find((w) => w.id === weekId);
-
   const { completedItems, progressPercentage, markComplete, resetProgress } =
     useWeekProgress(weekId, week);
-
   const [expandedDays, setExpandedDays] = useState({});
   const [activePopupData, setActivePopupData] = useState(null);
   const [copySuccess, setCopySuccess] = useState(false);
 
   useEffect(() => {
     if (dayId) {
-      const activeDayNum = dayId.replace("day-", "Day ");
+      const activeDayNum = dayId.toLowerCase().replace("day-", "Day ");
       setExpandedDays((prev) => ({ ...prev, [activeDayNum]: true }));
     } else {
       setExpandedDays({ "Day 1": true });
@@ -131,7 +130,7 @@ export default function WeekPage() {
     const nextState = !expandedDays[targetDayNum];
     setExpandedDays((prev) => ({ ...prev, [targetDayNum]: nextState }));
 
-    const targetDayId = targetDayNum.toLowerCase().replace(" ", "-");
+    const targetDayId = targetDayNum.replace(" ", "-");
     if (nextState) {
       navigate(`/${weekId}/${targetDayId}`);
     } else {
@@ -141,7 +140,6 @@ export default function WeekPage() {
 
   const handleLabelClick = async (e, item, isCodeSection) => {
     if (e.target.type === "checkbox") return;
-
     setCopySuccess(false);
     const itemKey = `${item.dayNum}_${item.label}`;
 
@@ -150,7 +148,6 @@ export default function WeekPage() {
         const resolverFunc = codeModules[item.path];
         if (!resolverFunc) throw new Error("Path not resolved");
         const fileContent = await resolverFunc();
-
         setActivePopupData({
           title: item.label,
           content: fileContent,
@@ -195,55 +192,58 @@ export default function WeekPage() {
   };
 
   return (
-    <main className="checklist-layout-container">
-      <div className="checklist-top-nav">
-        <button
-          className="back-to-curriculum-btn"
-          onClick={() => navigate("/")}
-        >
-          ← Back to Curriculum
-        </button>
-        <div className="module-banner-header">
-          <div className="module-badge-tag">
-            {week.badgeText || "Module 01"}
-          </div>
-          <h1 className="week-checklist-heading">{week.title} Checklist</h1>
-        </div>
-      </div>
+    <>
+      <main className="checklist-layout-container">
+        <div className="checklist-top-nav">
+          <button
+            className="back-to-curriculum-btn"
+            onClick={() => navigate("/")}
+          >
+            ← Back to Curriculum
+          </button>
 
-      <div className="checklist-workspace-grid">
-        <div className="left-tracking-panel">
-          <div className="panel-bar-title">Progress Tracking Checklist</div>
-
-          <div className="accordion-group">
-            {week.days.map((day) => (
-              <AccordionItem
-                key={day.dayNum}
-                day={day}
-                dayId={dayId}
-                isExpanded={!!expandedDays[day.dayNum]}
-                onToggle={toggleDayAccordion}
-                completedItems={completedItems}
-                handleLabelClick={handleLabelClick}
-              />
-            ))}
+          <div className="module-banner-header">
+            <span className="module-badge-tag">
+              {week.badgeText || "Module 01"}
+            </span>
+            <h1 className="week-checklist-heading">{week.title} Checklist</h1>
           </div>
         </div>
 
-        <ProgressPanel
-          progressPercentage={progressPercentage}
-          onReset={resetProgress}
-        />
-      </div>
+        <div className="checklist-workspace-grid">
+          <div className="left-tracking-panel">
+            <div className="panel-bar-title">Progress Tracking Checklist</div>
+            <div className="accordion-group">
+              {week.days.map((day) => (
+                <AccordionItem
+                  key={day.dayNum}
+                  day={day}
+                  dayId={dayId}
+                  isExpanded={!!expandedDays[day.dayNum]}
+                  onToggle={toggleDayAccordion}
+                  completedItems={completedItems}
+                  handleLabelClick={handleLabelClick}
+                />
+              ))}
+            </div>
+          </div>
+          <ProgressPanel
+            progressPercentage={progressPercentage}
+            onReset={resetProgress}
+          />
+        </div>
 
-      {activePopupData && (
-        <SandboxModal
-          activePopupData={activePopupData}
-          onClose={handleCloseModal}
-          onCopy={copyToClipboard}
-          copySuccess={copySuccess}
-        />
-      )}
-    </main>
+        {activePopupData && (
+          <SandboxModal
+            activePopupData={activePopupData}
+            onClose={handleCloseModal}
+            onCopy={copyToClipboard}
+            copySuccess={copySuccess}
+          />
+        )}
+      </main>
+    </>
   );
-}
+};
+
+export default WeekPage;

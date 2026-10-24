@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import homeRoutes from "../../Home/routes.jsx";
-import weekRoutes from "../../Weeks/routes.jsx";
+import homeRoutes from "../../features/Home/routes.jsx";
+import weekRoutes from "../../features/Weeks/routes.jsx";
 
-export default function AppRoutes() {
+const AppRoutes = () => {
   const combinedRoutes = [...homeRoutes, ...weekRoutes];
 
   return (
@@ -10,8 +10,9 @@ export default function AppRoutes() {
       {combinedRoutes.map((route, index) => (
         <Route key={index} path={route.path} element={route.element} />
       ))}
-      
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
-}
+};
+
+export default AppRoutes;

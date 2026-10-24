@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage";
 const homeRoutes = [
   {
     path: "/",
-    element: <HomePage />,
+    element: <HomePage />
   }
 ];
 

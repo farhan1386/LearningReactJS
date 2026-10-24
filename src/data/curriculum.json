@@ -3,14 +3,14 @@
   "subtitle": "Master production-ready frontend development week by week.",
   "weeks": [
     {
-      "id": "phase-1",
+      "id": "week-1-js",
       "badgeText": "Week 1",
       "badgeColor": "#3b82f6",
       "title": "JavaScript Prerequisites for React JS",
       "days": [
         {
           "dayNum": "Day 1",
-          "dayTitle": "Let, Const & Template Literals",
+          "dayTitle": "Block Scope & Template Literals",
           "files": ["01_BlockScopeVariables.js", "02_TemplateLiterals.js"],
           "sections": [
             {
@@ -20,7 +20,7 @@
               "items": [
                 {
                   "label": "Let & Const Variable Scoping rules",
-                  "answer": "<strong>Let & Const:</strong> Modern JavaScript introduces <code>let</code> and <code>const</code> to lock variables into the specific block <code>{}</code> where they are declared. This replaces the old <code>var</code> keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs.<br><br><strong>• 1. let Keyword:</strong> The <code>let</code> keyword was introduced in ES6. It has block scope and cannot be re-declared in the same scope.<br><br><strong>• 2. const Keyword:</strong> The <code>const</code> keyword declares variables that cannot be reassigned. It is block-scoped as well."
+                  "answer": "<strong>Let & Const:</strong> Modern JavaScript introduces <code>let</code> and <code>const</code> to lock variables into the specific block <code>{}</code> where they are declared. This replaces the old <code>var</code> keyword, which is function-scoped and hoists variables, leading to silent data mutation bugs.<br><br><strong>• 1. let Keyword:</strong> The <code>let</code> keyword was introduced in ES6. It has block scope and cannot be re-declared in the same scope.<br><br><strong>• 2. const Keyword:</strong> The <code>const</code> keyword declares variables that cannot be assigned. It is block-scoped as well."
                 },
                 {
                   "label": "Template Literals & String Interpolation Rules",
@@ -39,11 +39,11 @@
               "items": [
                 {
                   "label": "01_BlockScopeVariables.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-1 Block Scope & Template Literals/01_BlockScopeVariables.js"
+                  "path": "/src/features/week-1-js/Day-1 Block Scope & Template Literals/01_BlockScopeVariables.js"
                 },
                 {
                   "label": "02_TemplateLiterals.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-1 Block Scope & Template Literals/02_TemplateLiterals.js"
+                  "path": "/src/features/week-1-js/Day-1 Block Scope & Template Literals/02_TemplateLiterals.js"
                 }
               ]
             }
@@ -51,7 +51,7 @@
         },
         {
           "dayNum": "Day 2",
-          "dayTitle": "Arrow Functions, Destructuring, Spread & Rest Operators",
+          "dayTitle": "Modern ES6+ Syntax Shortcuts",
           "files": [
             "03_ArrowFunctionsSyntax.js",
             "04_DataStructureDestructuring.js",
@@ -83,16 +83,16 @@
               "textColor": "text-warning",
               "items": [
                 {
-                  "label": "03_ArrowFunctionsSyntax.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-2 Modern ES6+ Syntax Shortcuts/03_ArrowFunctionsSyntax.js"
+                  "label": "03_ArrowFunctions.js",
+                  "path": "/src/features/week-1-js/Day-2 Modern ES6+ Syntax Shortcuts/03_ArrowFunctions.js"
                 },
                 {
-                  "label": "04_DataStructureDestructuring.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-2 Modern ES6+ Syntax Shortcuts/04_DataStructureDestructuring.js"
+                  "label": "04_ObjectArrayDestructuring.js",
+                  "path": "/src/features/week-1-js/Day-2 Modern ES6+ Syntax Shortcuts/04_ObjectArrayDestructuring.js"
                 },
                 {
                   "label": "05_SpreadRestOperators.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-2 Modern ES6+ Syntax Shortcuts/05_SpreadRestOperators.js"
+                  "path": "/src/features/week-1-js/Day-2 Modern ES6+ Syntax Shortcuts/05_SpreadRestOperators.js"
                 }
               ]
             }
@@ -100,7 +100,7 @@
         },
         {
           "dayNum": "Day 3",
-          "dayTitle": "Array Operations & Data Transformations (map(), filter() & reduce())",
+          "dayTitle": "Array Operations & Data Transformations",
           "files": [
             "06_ArrayMapTransform.js",
             "07_ArrayFilterMethods.js",
@@ -132,16 +132,16 @@
               "textColor": "text-warning",
               "items": [
                 {
-                  "label": "06_ArrayMapTransform.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-3 Array Operations & Data Transformations/06_ArrayMapTransform.js"
+                  "label": "06_MapMethod.js",
+                  "path": "/src/features/week-1-js/Day-3 Array Operations & Data Transformations/06_MapMethod.js"
                 },
                 {
-                  "label": "07_ArrayFilterMethods.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-3 Array Operations & Data Transformations/07_ArrayFilterMethods.js"
+                  "label": "07_FilterMethod.js",
+                  "path": "/src/features/week-1-js/Day-3 Array Operations & Data Transformations/07_FilterMethod.js"
                 },
                 {
-                  "label": "08_ArrayReduceLogic.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-3 Array Operations & Data Transformations/08_ArrayReduceLogic.js"
+                  "label": "08_ReduceMethod.js",
+                  "path": "/src/features/week-1-js/Day-3 Array Operations & Data Transformations/08_ReduceMethod.js"
                 }
               ]
             }
@@ -182,11 +182,15 @@
               "items": [
                 {
                   "label": "09_TernaryOperator.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-4 Logic Control & UI Switching/09_TernaryOperator.js"
+                  "path": "/src/features/week-1-js/Day-4 Logic Control & UI Switching/09_TernaryOperator.js"
                 },
                 {
                   "label": "10_LogicalOperators.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-4 Logic Control & UI Switching/10_LogicalOperators.js"
+                  "path": "/src/features/week-1-js/Day-4 Logic Control & UI Switching/10_LogicalOperators.js"
+                },
+                {
+                  "label": "11_NullishCoalescingOperator.js",
+                  "path": "/src/features/week-1-js/Day-4 Logic Control & UI Switching/11_NullishCoalescingOperator.js"
                 }
               ]
             }
@@ -218,12 +222,12 @@
               "textColor": "text-warning",
               "items": [
                 {
-                  "label": "11_PromisesAsyncAwait.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-5 Asynchronous Data Handling/11_PromisesAsyncAwait.js"
+                  "label": "12_AsyncAwaitPromises.js",
+                  "path": "/src/features/week-1-js/Day-5 Asynchronous Data Handling/12_AsyncAwaitPromises.js"
                 },
                 {
-                  "label": "12_FetchAPI.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-5 Asynchronous Data Handling/12_FetchAPI.js"
+                  "label": "13_NetworkFetchRequests.js",
+                  "path": "/src/features/week-1-js/Day-5 Asynchronous Data Handling/13_NetworkFetchRequests.js"
                 }
               ]
             }
@@ -259,11 +263,11 @@
               "items": [
                 {
                   "label": "14_ObjectMethodsTransformation.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-6 Object Methods & Optional Chaining/14_ObjectMethodsTransformation.js"
+                  "path": "/src/features/week-1-js/Day-6 Object Methods & Optional Chaining/14_ObjectMethodsTransformation.js"
                 },
                 {
                   "label": "15_OptionalChainingProtection.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-6 Object Methods & Optional Chaining/15_OptionalChainingProtection.js"
+                  "path": "/src/features/week-1-js/Day-6 Object Methods & Optional Chaining/15_OptionalChainingProtection.js"
                 }
               ]
             }
@@ -271,7 +275,7 @@
         },
         {
           "dayNum": "Day 7",
-          "dayTitle": "ES6 Modules (Import/Export) & Error Handling",
+          "dayTitle": "ES6 Modules Import Export & Error Handling",
           "files": [
             "16_ModuleDataExporter.js",
             "17_ModuleDataImporter.js",
@@ -299,16 +303,16 @@
               "textColor": "text-warning",
               "items": [
                 {
-                  "label": "16_ModuleDataExporter.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-7 ES6 Modules & Error Handling/16_ModuleDataExporter.js"
+                  "label": "16_ImportModule.js",
+                  "path": "/src/features/week-1-js/Day-7 ES6 Modules Import Export & Error Handl.../16_ImportModule.js"
                 },
                 {
-                  "label": "17_ModuleDataImporter.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-7 ES6 Modules & Error Handling/17_ModuleDataImporter.js"
+                  "label": "17_ExportModule.js",
+                  "path": "/src/features/week-1-js/Day-7 ES6 Modules Import Export & Error Handl.../17_ExportModule.js"
                 },
                 {
-                  "label": "18_ErrorHandlingArchitecture.js",
-                  "path": "/src/Phase 1 JavaScript Prerequisites/Week-1/Day-7 ES6 Modules & Error Handling/18_ErrorHandlingArchitecture.js"
+                  "label": "18_ErrorHandling.js",
+                  "path": "/src/features/week-1-js/Day-7 ES6 Modules Import Export & Error Handl.../18_ErrorHandling.js"
                 }
               ]
             }
@@ -317,49 +321,553 @@
       ]
     },
     {
-      "id": "phase-2",
+      "id": "week-2-core-concepts",
       "badgeText": "Week 2",
       "badgeColor": "#6b7280",
       "title": "Core React Concepts",
-      "days": []
+      "days": [
+        {
+          "dayNum": "Day 1",
+          "dayTitle": "JSX Elements & Expression Injection",
+          "files": ["01_BlockScopeVariables.js", "02_TemplateLiterals.js"],
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "Absolute Layout Rules of JSX",
+                  "answer": "<strong>JSX Rules:</strong> JSX is an XML-like semantic abstraction extension that compiles directly into standard JavaScript objects. It introduces strict processing laws: all tags must self-close, attributes rely on camelCase nomenclature (like <code>className</code> instead of <code>class</code>, and <code>htmlFor</code> instead of <code>for</code>), and elements must settle inside a single wrapper root container or fragment.<br><br><strong>• <></>:</strong> The empty fragment placeholder token wrapper that groups sibling elements without inserting redundant layout nodes into the DOM.<br><br><strong>• className:</strong> The custom camelCase attribute property mapping layout elements to external stylesheet declarations.<br><br><strong>• trailingSlash:</strong> The terminating indicator (<code>/ &gt;</code>) mandatory for structural tags that do not wrap children, preventing engine runtime compilation exceptions."
+                },
+                {
+                  "label": "Dynamic Expression Embedding",
+                  "answer": "<strong>Expression Injection:</strong> Curly braces <code>{}</code> function as direct pipeline injectors inside a JSX tree. Any valid inline evaluation expression—such as math statements, string mutations, ternary routines, or array operations—will be executed on rendering and placed directly into the visual layout.<br><br><strong>• { }:</strong> The evaluation operator boundaries that signal the engine to switch from markup rendering to executing native JavaScript runtime threads.<br><br><strong>• variableRef:</strong> Reference statements inside the token that fetch and display current memory allocations.<br><br><strong>• inlineExpression:</strong> Inline operations like <code>.toUpperCase()</code> or conditional checks computed directly inside the rendering lifecycle."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "01_JSXRules.js",
+                  "path": "/src/features/week-2-core-concepts/01_JSXRules.js"
+                },
+                {
+                  "label": "02_ExpressionEmbedding.js",
+                  "path": "/src/features/week-2-core-concepts/02_ExpressionEmbedding.js"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "phase-3",
+      "id": "week-3-hooks",
       "badgeText": "Week 3",
       "badgeColor": "#10b981",
       "title": "React Hooks",
-      "days": []
+      "days": [
+        {
+          "dayNum": "Day 1",
+          "dayTitle": "State Hooks (useState & useReducer)",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "useState Hook Mechanics",
+                  "answer": "<strong>useState:</strong> Used to store, track, and update mutable data value allocations that change during a component's operational lifetime.<br><br><strong>• Scheduled Re-renders:</strong> Invoking the state setter function signals the core React reconciliation engine to schedule a component re-render cycle, updating the visible DOM tree layout to match the new memory state."
+                },
+                {
+                  "label": "useReducer Hook Complex Transitions",
+                  "answer": "<strong>useReducer:</strong> Engineered to manage complex component state models involving multiple related values or intricate operational transitions using a deterministic state reducer callback machine.<br><br><strong>• Descriptive Action Dispatching:</strong> State mutations are driven by dispatching clear action objects <code>{ type: 'action_name' }</code> to a central reducer function, which computes the exact next state mapping based on previous parameters."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "01_useState.jsx",
+                  "path": "/src/features/week-3-hooks/01_useState.jsx"
+                },
+                {
+                  "label": "02_useReducer.jsx",
+                  "path": "/src/features/week-3-hooks/02_useReducer.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 2",
+          "dayTitle": "Context Hooks (useContext)",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "useContext Deep Prop-Drilling Alternatives",
+                  "answer": "<strong>useContext:</strong> Establishes a direct data injection channel to pass parameters deeply through the component tree without manually cascading props down through intermediate layout levels.<br><br><strong>• Decoupled Consumption:</strong> Consumer sub-components can immediately pull data fields supplied from distant upstream provider contexts, automatically re-rendering whenever the parent context provider value shifts."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "03_useContext.jsx",
+                  "path": "/src/features/week-3-hooks/03_useContext.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 3",
+          "dayTitle": "Ref Hooks (useRef & useImperativeHandle)",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "useRef Non-Rendering State Records",
+                  "answer": "<strong>useRef:</strong> Instantiates a mutable container object whose <code>.current</code> property persists across renders. It provides a direct pipeline to interact with raw browser DOM target nodes or cache baseline metric tracking values.<br><br><strong>• Re-render Prevention:</strong> Modifying the <code>.current</code> container reference bypasses the React view rendering loop entirely, storing parameters safely without scheduling or causing UI layout refreshes."
+                },
+                {
+                  "label": "useImperativeHandle Ref Customizations",
+                  "answer": "<strong>useImperativeHandle:</strong> Restricts a parent wrapper's authoritative access over inner child DOM structures when using exposed refs. Must be deployed alongside <code>forwardRef</code> closures.<br><br><strong>• Proxy Method Binding:</strong> Instead of exposing the raw DOM element node directly, it customizes the exposed instance ref container to provide explicit proxy method triggers to the parent controller."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "04_useImperativeHandle.jsx",
+                  "path": "/src/features/week-3-hooks/04_useImperativeHandle.jsx"
+                },
+                {
+                  "label": "05_useRef.jsx",
+                  "path": "/src/features/week-3-hooks/05_useRef.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 4",
+          "dayTitle": "Effect Hooks (useEffect, useInsertionEffect, useLayoutEffect)",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "useEffect Environmental Orchestration",
+                  "answer": "<strong>useEffect:</strong> Designed to synchronize components with external, imperative architectures (such as network data fetching, event channel subscriptions, and background timers) outside the pure UI generation flow pipeline.<br><br><strong>• Deferred Execution:</strong> Delays layout callback execution until the initial browser layout paint loops finish, running cleanup tracking routines prior to repeating."
+                },
+                {
+                  "label": "useInsertionEffect Style Injections",
+                  "answer": "<strong>useInsertionEffect:</strong> Engineered specifically for runtime CSS-in-JS injection workflows. It handles appending style sheets programmatically ahead of system geometric computation cycles.<br><br><strong>• Paint Pre-emption:</strong> Fires ahead of any layout effects or layout measurement lookups, avoiding runtime style recalculation lags inside the browser engine."
+                },
+                {
+                  "label": "useLayoutEffect Synchronous Visual Audits",
+                  "answer": "<strong>useLayoutEffect:</strong> Fires synchronously following all structural DOM mutations but strictly prior to the browser painting layout updates onto user screens.<br><br><strong>• Stutter Prevention:</strong> Halts paint operations to complete quick boundary box calculations and layout checks, mapping updates onto user views smoothly without screen stuttering."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "06_useEffect.jsx",
+                  "path": "/src/features/week-3-hooks/06_useEffect.jsx"
+                },
+                {
+                  "label": "07_useInsertionEffect.jsx",
+                  "path": "/src/features/week-3-hooks/07_useInsertionEffect.jsx"
+                },
+                {
+                  "label": "08_useLayoutEffect.jsx",
+                  "path": "/src/features/week-3-hooks/08_useLayoutEffect.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 5",
+          "dayTitle": "Performance Hooks (useCallback, useDeferredValue, useMemo, useTransition)",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "useCallback Referential Security",
+                  "answer": "<strong>useCallback:</strong> Caches explicit functional memory address allocations between re-render operations to maintain strict reference equality.<br><br><strong>• Unnecessary Update Shielding:</strong> Protects optimized child components wrapped in <code>React.memo</code> against redundant render passes triggered by functional reference generation cycles in parent containers."
+                },
+                {
+                  "label": "useDeferredValue UI Interaction Optimization",
+                  "answer": "<strong>useDeferredValue:</strong> Intercepts data-driven state flows to delay updating high-overhead, non-urgent sub-trees (like massive filter searches) in the background.<br><br><strong>• Input Fluidity:</strong> Keeps high-priority direct interface interactions (like real-time text input typing) perfectly fluid, updating lower-priority views only after user input cycles finish."
+                },
+                {
+                  "label": "useMemo Intensive Loop Bypassing",
+                  "answer": "<strong>useMemo:</strong> Caches the calculated outcome of expensive, high-overhead mathematical routines or data mutations directly inside component memory.<br><br><strong>• Computation Throttling:</strong> Bypasses repeating heavy reduction or data processing sweeps during cosmetic interface updates, returning stored structures directly until tracked dependency keys modify values."
+                },
+                {
+                  "label": "useTransition Non-Blocking State Operations",
+                  "answer": "<strong>useTransition:</strong> Splits state changes into lower execution priorities, marking heavy background layout mutations as non-blocking background threads.<br><br><strong>• Responsive Thread Control:</strong> Prevents massive data loads or view switching operations from freezing the main UI thread, prioritizing urgent interactions like button clicks while exposing a real-time <code>isPending</code> tracking status."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "09_useCallback.jsx",
+                  "path": "/src/features/week-3-hooks/09_useCallback.jsx"
+                },
+                {
+                  "label": "10_useDeferredValue.jsx",
+                  "path": "/src/features/week-3-hooks/10_useDeferredValue.jsx"
+                },
+                {
+                  "label": "11_useMemo.jsx",
+                  "path": "/src/features/week-3-hooks/11_useMemo.jsx"
+                },
+                {
+                  "label": "12_useTransition.jsx",
+                  "path": "/src/features/week-3-hooks/12_useTransition.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 6",
+          "dayTitle": "Utility & Store Hooks (useDebugValue, useId, useSyncExternalStore)",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "useDebugValue Custom Inspector Labels",
+                  "answer": "<strong>useDebugValue:</strong> Publishes custom diagnostic telemetry and logging strings into local component inspection panes inside the React Developer Tools browser extension.<br><br><strong>• Custom Hook Visibility:</strong> Injects recognizable monitoring metadata strings straight into the custom hook inspector profiles for faster runtime testing."
+                },
+                {
+                  "label": "useId Cross-Platform Pipeline Alignment",
+                  "answer": "<strong>useId:</strong> Generates stable, non-changing identifier tokens unique to each instance location across server-side rendering and client-side web hydration loops.<br><br><strong>• Attribute Alignment:</strong> Prevents attribute parameter mismatches and build mismatches across platform channels when connecting form label pointers to target inputs."
+                },
+                {
+                  "label": "useSyncExternalStore Safe Global Subscriptions",
+                  "answer": "<strong>useSyncExternalStore:</strong> Establishes crash-safe subscription links between React functional elements and completely external global data stores or state nodes.<br><br><strong>• Safe Concurrent Reads:</strong> Guarantees synchronization across concurrent multi-threaded framework reads, pausing execution threads immediately if external store bounds modify parameters midway."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "13_useDebugValue.jsx",
+                  "path": "/src/features/week-3-hooks/13_useDebugValue.jsx"
+                },
+                {
+                  "label": "14_useId.jsx",
+                  "path": "/src/features/week-3-hooks/14_useId.jsx"
+                },
+                {
+                  "label": "15_useSyncExternalStore.jsx",
+                  "path": "/src/features/week-3-hooks/15_useSyncExternalStore.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 7",
+          "dayTitle": "Custom Hooks Architecture",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "Custom Hook Creation & Functional Isolation",
+                  "answer": "<strong>Custom Hooks:</strong> Consolidates repetitive internal component hooks, lifecycle scripts, and state management flow patterns into plain, isolated JavaScript functions following the strict <code>useName</code> nomenclature convention.<br><br><strong>• Isolated Register Generation:</strong> Generates unique state registers and separate storage layers for each calling component, allowing common logic patterns to be shared across completely independent UI nodes safely."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "16_customHookFetchData.jsx",
+                  "path": "/src/features/week-3-hooks/16_customHookFetchData.jsx"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "phase-4",
+      "id": "week-4-side-effects",
       "badgeText": "Week 4",
       "badgeColor": "#06b6d4",
       "title": "Side Effects and Ecosystem",
-      "days": []
+      "days": [
+        {
+          "dayNum": "Day 1",
+          "dayTitle": "Foundational useEffect Hook Mechanics",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "useEffect Hook Execution Architecture",
+                  "answer": "<strong>useEffect Mechanics:</strong> React components are pure functions designed to compute visual layouts based on props and state. Side effects—such as network handshakes, manual DOM manipulation patches, or timer setup operations—must be wrapped inside the <code>useEffect</code> hook to prevent them from blocking or freezing the primary rendering loop thread.<br><br><strong>• useEffect(callback, dependencies):</strong> The core framework hook method that registers side effect code blocks to execute outside the main rendering path.<br><br><strong>• mountPhaseCommit:</strong> The initial component lifecycle point where the virtual node structure lands on the browser DOM, triggering the effect for the first time."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "01_UseEffectMountBasics.jsx",
+                  "path": "/src/features/week-4-side-effects/01_UseEffectMountBasics.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 2",
+          "dayTitle": "The Dependency Array Control Framework",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "The Dependency Array Constraint Vector",
+                  "answer": "<strong>Selective Execution:</strong> The second argument of the <code>useEffect</code> hook controls its execution path. By passing variables inside an ordered tracking array, you explicitly dictate when the effect block should execute, forcing it to skip operations unless a specified value shifts.<br><br><strong>• noDependencyArray:</strong> Omitting the array completely <code>useEffect(() =&gt; {})</code> forces the effect to re-run on every single render pass.<br><br><strong>• emptyDependencyArray ([]):</strong> Restricts the effect to running exactly once during the baseline initial mount step.<br><br><strong>• activeVariableTracking ([var1, var2]):</strong> The condition where the effect skips updates unless a listed tracking variable value mutates."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "02_DependencyArrayConstraints.jsx",
+                  "path": "/src/features/week-4-side-effects/02_DependencyArrayConstraints.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 3",
+          "dayTitle": "Lifecycle Cleanups & Memory Leak Prevention",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "The Effect Cleanup Routine",
+                  "answer": "<strong>Memory Leak Prevention:</strong> When a component sets up persistent operations (like a standard JavaScript <code>setInterval</code> timer, custom global browser window event listeners, or WebSockets), those bindings continue running in background memory even after the component unmounts. To prevent memory leaks, you must return a dedicated clean-up callback function out of the effect block to strip away the subscription before the component structure is destroyed.<br><br><strong>• returnMethodCallback:</strong> The trailing arrow function returned inside the primary effect scope dedicated to resource cleanup.<br><br><strong>• componentDismountPhase:</strong> The lifecycle event where a node is pulled out of the layout view, triggering cleanup functions automatically."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "03_EffectCleanupRoutine.jsx",
+                  "path": "/src/features/week-4-side-effects/03_EffectCleanupRoutine.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 4",
+          "dayTitle": "Asynchronous REST API Fetching Pipelines",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "Async Network Operations Inside Effects",
+                  "answer": "<strong>Network Data Orchestration:</strong> React effect callbacks cannot be directly marked with the <code>async</code> modifier keyword because asynchronous methods return implicit Promise objects, whereas React demands that effects return either nothing or a synchronous cleanup function. The industry standard pattern handles this limitation by nesting a standalone asynchronous execution function inside the effect body and invoking it immediately.<br><br><strong>• nestedAsyncFunction:</strong> An independent asynchronous execution block defined inside the effect scope to fetch data.<br><br><strong>• loadingStateTracking:</strong> A state variable used to display placeholder feedback to the user while network packets cross pipelines."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "04_NetworkApiFetching.jsx",
+                  "path": "/src/features/week-4-side-effects/04_NetworkApiFetching.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 5",
+          "dayTitle": "Persistent Caching via LocalStorage",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "LocalStorage Data Persistence Synchronization",
+                  "answer": "<strong>Browser Storage Sync:</strong> React component memory allocations flush out completely anytime a browser window refreshes. You can persist simple data schemas directly onto the user's hard drive by syncing state changes with the browser's native <code>localStorage</code> text cache using side effects.<br><br><strong>• localStorage.setItem(key, value):</strong> Core web browser caching method used to write text values down to the local drive cache.<br><br><strong>• JSON.stringify / JSON.parse:</strong> Methods used to serialize structured data objects into string texts for storage, and deserialize them back into usable JavaScript objects upon retrieval."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "05_LocalStoragePersistence.jsx",
+                  "path": "/src/features/week-4-side-effects/05_LocalStoragePersistence.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 6",
+          "dayTitle": "Modern Local Tooling & Compilation Frameworks",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "The Vite Development Tooling Paradigm",
+                  "answer": "<strong>Modern Local Tooling:</strong> Legacy web tooling setups run heavy, slow background processing compilation passes that bundle entire code repositories before launching development servers. Vite modernizes this environment by leveraging native browser ES Modules (ESM) to load files on demand, creating instant startup speeds and lightning-fast Hot Module Replacement (HMR).<br><br><strong>• Vite Engine Tooling:</strong> A build framework utility that handles processing, optimization parsing, and module compilation assets.<br><br><strong>• vite.config.js:</strong> The main configuration management file controlling compilation pipelines, plugin injection, and development workspace local server ports."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "06_ViteConfigBlueprint.js",
+                  "path": "/src/features/week-4-side-effects/06_ViteConfigBlueprint.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dayNum": "Day 7",
+          "dayTitle": "Component Tree Lifecycle Diagnostics",
+          "sections": [
+            {
+              "title": "Theory",
+              "icon": "📘",
+              "textColor": "text-primary",
+              "items": [
+                {
+                  "label": "Profiling Renders vs Effects Execution Flows",
+                  "answer": "<strong>Lifecycle Profiling:</strong> Understanding the strict chronological sequence of how React components mount, render text lines, schedule operations, and execute side effects is essential for debugging advanced tracking structures.<br><br><strong>• renderEvaluationPhase:</strong> The primary top-down sync execution block where the component function evaluates variables and maps out visual JSX objects.<br><br><strong>• effectExecutionPhase:</strong> The delayed post-render lifecycle segment where side effect logic blocks and dependencies execute after graphic elements have safely settled onto the page."
+                }
+              ]
+            },
+            {
+              "title": "Coding",
+              "icon": "💻",
+              "textColor": "text-warning",
+              "items": [
+                {
+                  "label": "07_LifecycleDiagnostics.jsx",
+                  "path": "/src/features/week-4-side-effects/07_LifecycleDiagnostics.jsx"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "phase-5",
+      "id": "week-5-advanced-routing",
       "badgeText": "Week 5",
       "badgeColor": "#f59e0b",
       "title": "Advanced Routing",
       "days": []
     },
     {
-      "id": "phase-6",
+      "id": "week-6-state-management",
       "badgeText": "Week 6",
       "badgeColor": "#ef4444",
       "title": "State Management",
       "days": []
     },
     {
-      "id": "phase-7",
+      "id": "week-7-performance",
       "badgeText": "Week 7",
       "badgeColor": "#111827",
       "title": "Performance Optimization",
       "days": []
     },
     {
-      "id": "phase-8",
+      "id": "week-8-testing",
       "badgeText": "Week 8",
       "badgeColor": "#2563eb",
       "title": "Testing & Deployment",

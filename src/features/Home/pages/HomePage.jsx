@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import curriculumData from "../../data/curriculum.json";
+import curriculumData from "../../../data/curriculum.json";
 
-export default function HomePage() {
+
+const HomePage = () => {
   const [overallProgress, setOverallProgress] = useState(0);
 
   useEffect(() => {
@@ -77,18 +78,29 @@ export default function HomePage() {
           const weekPercent =
             weekTotal > 0 ? Math.round((weekCompleted / weekTotal) * 100) : 0;
 
+          const defaultColors = {
+            "week-1-js": "#3b82f6",
+            "week-2-core-concepts": "#6b7280",
+            "week-3-hooks": "#10b981",
+            "week-4-side-effects": "#06b6d4",
+            "week-5-advanced-routing": "#f59e0b",
+            "week-6-state-management": "#ef4444",
+            "week-7-performance": "#111827",
+            "week-8-testing": "#2563eb"
+          };
+          
+          const themeColor = week.badgeColor || defaultColors[week.id] || "#3b82f6";
+          const matchResult = week.id?.match(/\d+/);
+          const fallbackBadgeText = `Week ${matchResult ? matchResult : "1"}`;
+
           return (
-            <Link
-              key={week.id}
-              to={`/${week.id}/day-1`}
-              className="module-card"
-            >
+            <Link key={week.id} to={`/${week.id}/Day-1`} className="module-card">
               <div className="card-top">
                 <span
                   className="week-badge"
-                  style={{ backgroundColor: week.badgeColor }}
+                  style={{ backgroundColor: themeColor }}
                 >
-                  {week.badgeText}
+                  {week.badgeText || fallbackBadgeText}
                 </span>
                 <h2 className="module-card-title">{week.title}</h2>
               </div>
@@ -99,7 +111,7 @@ export default function HomePage() {
                     className="module-bar-fill" 
                     style={{ 
                       width: `${weekPercent}%`,
-                      backgroundColor: week.badgeColor 
+                      backgroundColor: themeColor 
                     }}
                   ></div>
                 </div>
@@ -109,7 +121,7 @@ export default function HomePage() {
                 <span className="ready-text">{weekPercent}% ready</span>
                 <span
                   className="explore-link"
-                  style={{ color: week.badgeColor }}
+                  style={{ color: themeColor }}
                 >
                   Explore Module →
                 </span>
@@ -120,4 +132,6 @@ export default function HomePage() {
       </main>
     </div>
   );
-}
+};
+
+export default HomePage;

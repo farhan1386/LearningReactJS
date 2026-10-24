@@ -3,11 +3,11 @@ import WeekPage from "./pages/WeekPage";
 const weekRoutes = [
   {
     path: "/:weekId",
-    element: <WeekPage />,
+    element: <WeekPage />
   },
   {
     path: "/:weekId/:dayId",
-    element: <WeekPage />,
+    element: <WeekPage />
   }
 ];
 
